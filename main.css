@@ -327,7 +327,8 @@ section h5 {
 
 .news-container{
     /* position: absolute; */
-    display: flex;
+    /* display: flex; */
+
     margin: 40px ;
     padding: 10px 65px 250px 65px;
     color: white;
@@ -350,62 +351,61 @@ section h5 {
     color: white;
     font-family: 'Times New Roman', Times, serif;
     position: absolute;
-
 }
 
- h2{
+.news-container h2{
+    font-size: 23px;
+    font-weight: 100;
+    border-left: 2px solid black;
+    margin-top: 40px;
     color: black;
-    /* border-left: solid black; */
-    margin-top: 30px;
+    padding-left: 5px;
 
 }
-
-.grid-2 {
-    display: grid;
-    /* width: 50em; */
-    width: 80%;
-    margin-top: 65px;
-    margin-left: 1px;
-    grid-gap: 2rem;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    align-items: start;
+.birthdays-container{
+    display: flex;
+    color: black;
 }
 
-
-.grid-item-2{
+.grid-item1{
     background-color: #fff;
     border-radius: 0.4rem;
     overflow: hidden;
     box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: 0.2s;
+    display: block;
 }
 
-.grid-item-2:hover{
+.grid-item1:hover{
     transition: translateY(-0.5%);
     box-shadow: 0 4rem 8rem rgba(0, 0, 0, 0.5);
 }
 
-.card-img-2 {
+.card{
+    width: 220px;
+    padding: 7px;
+}
+
+.card-img {
     display: block;
-    width: 70%;
+    width: 210px;
     height: 20rem;
     object-fit: cover;
-    
 }
 
-.card-content-2{
-    padding: 1rem;
+.card-content{
+    padding: 0.3rem;
 }
 
-.card-header-2{
+.card-header{
     font-size: 2rem;
     font-weight: 100;
     color: #0d0d0d;
     margin-bottom: 1.5rem;
 }
 
-.card-text-2{
+.card-text{
     font-size: 1.2rem;
     letter-spacing: 0.1rem;
     line-height: 1.7;
@@ -413,6 +413,37 @@ section h5 {
     margin-bottom: 2.5rem;
 
 }
+
+
+.next-service h1{
+    text-decoration: dashed;
+    font-size: 3rem;
+    font-weight: 200;
+    background-color: #5a5c5f;
+    border-top: 4px solid red;
+    width: 320px;
+    margin-bottom: 70px;
+    padding-left: 5px;
+}
+
+.next-service p{
+    color: black;
+}
+
+/* .birthdays-container img{
+    height: 150px;
+    width: 150px;
+} */
+
+/* .birthday-img-card{
+    border-radius: 2px;
+    
+} */
+
+/* .birthdays-container img{
+    float: left;
+} */
+
 
 /* 
 .scroll-text {
