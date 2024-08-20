@@ -1,0 +1,97 @@
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+.container {
+   
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+
+.show {
+    display: block;
+  }
+  
+  /* Style the buttons */
+  .btn {
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  
+  .btn:hover {
+    background-color: #ddd;
+  }
+  
+  .btn.active {
+    background-color: #666;
+    color: white;
+  }
+
+  nav a {
+    text-decoration: none;
+    font-size: 15px;
+    margin: 0 20px;
+    color: white;
+    padding: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+nav {
+    background-color: #2E81DF;
+    padding-left: 7px ;
+    padding-right: 9px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    border-radius: 7px;
+    padding: 4px;
+    border: none;
+
+}
+
+.welcome{
+    margin-top: 70px;
+}
+
+.welcome h1{
+    text-align: center;
+    font-size: 60px;
+    font-weight: 100;
+    font-style: italic;
+    border-bottom: 1px solid rgb(48, 158, 202);
+}
+
+.ministry-profile{
+    display: flex;
+    
+
+}
+
+.card{
+    border-radius: 5px;
+    padding: 1px solid black;
+
+}
