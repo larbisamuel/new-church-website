@@ -14,28 +14,7 @@ html {
     margin-top: 20px;
   }
 
-.show {
-    display: block;
-  }
-  
-  /* Style the buttons */
-  .btn {
-    border: none;
-    outline: none;
-    padding: 12px 16px;
-    background-color: white;
-    cursor: pointer;
-    font-size: 13px;
-  }
-  
-  .btn:hover {
-    background-color: #ddd;
-  }
-  
-  .btn.active {
-    background-color: #666;
-    color: white;
-  }
+
 
   nav a {
     text-decoration: none;
@@ -73,25 +52,166 @@ nav {
 }
 
 .welcome{
-    margin-top: 70px;
+    margin-top: 20px;
 }
 
 .welcome h1{
     text-align: center;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 100;
     font-style: italic;
     border-bottom: 1px solid rgb(48, 158, 202);
 }
 
-.ministry-profile{
-    display: flex;
-    
+.welcome p{
+  font-size: 20px;
+}
+
+
+
+.faq{
+  max-width: 900px;
+  margin-top: 0.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #1a1919;
+  cursor: pointer;
 
 }
 
-.card{
-    border-radius: 5px;
-    padding: 1px solid black;
+.question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.question h3{
+  font-size: 1.2rem;
+}
+
+.answer{
+  max-height: 0;
+  overflow: scroll;
+  transition: max-height 1.0s ease;
+}
+
+.answer p{
+  padding-top: 0.2rem;
+  line-height: 26px;
+  font-size: 1.4rem;
+}
+
+.faq.active .answer{
+  max-height: 300px;
+}
+
+.faq.active svg{
+  transform: rotate(180deg);
+  
+}
+
+svg {
+  transition: transform 0.5s ease-in;
+}
+
+@keyframes fade {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+
+.interest-grp{
+  padding: 5px;
+}
+
+
+
+.generational-grp{
+  padding: 5px;
+  background-color: #f1f4f8;
+  margin-top: 10px;
+}
+
+
+.generational-grp p{
+  border-left: 2px solid black;
+  padding-left: 4px;
+  font-size: 24px;
+}
+
+.row {
+  margin: 40px -16px;
+  color: black;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 5px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 22.50%;
+  display: none; /* Hide all elements by default */
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: rgb(239, 239, 239);
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+
+}
+
+.content:hover{
+  transition: translateY(-0.7%);
+  /* overflow: hidden; */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #8c7e7e;
+  color: white;
+}
+
+.btn-container{
+padding-top: 10px;
+margin-top: 20px;
 }

@@ -486,8 +486,6 @@ section h5 {
 .theme1{
     border: #0d0d0d;
     border-top: 3px solid black;
-    border-bottom: 1px solid black;
-
     padding-left: 5px;
     margin-top: 60px;
 }
@@ -513,6 +511,38 @@ section h5 {
     padding-bottom: 0px;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 80%;
+    border-top: 1px solid #1737c2;
+    border-radius: 6px;
+    margin: 0 auto;
+    margin-top: 12em;
+  }
+  
+  th{
+    text-align: left;
+    padding: 16px;
+    color: black;
+    background-color: white;
+    font-size: 25px;
+  }
+  
+  td {
+    text-align: left;
+    padding: 16px;
+    font-size: 20px;
+
+  }
+  
+  tr:nth-child(even) {
+    background-color: #204cbb;
+  }
+
+  tr:nth-child(odd){ 
+    color: #00040d;
+  }
 
 /* .birthdays-container img{
     height: 150px;
