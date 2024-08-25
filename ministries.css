@@ -66,7 +66,14 @@ nav {
 .welcome p{
   font-size: 20px;
 }
-
+.interest-title{
+  background-color: #1a1919;
+}
+.interest-title h3 {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
 
 
 .faq{
