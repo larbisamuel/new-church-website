@@ -195,7 +195,7 @@ nav a:hover {
 
 }
 
-h3{
+.history-title h3{
     width: 100%;
     font-size: 27px;
     font-weight: 100;
@@ -209,7 +209,6 @@ h3{
     padding: 10px 65px 250px 65px;
     color: white;
     border-radius: 20px;
-    /* border: 1px solid #b81313; */
     height: auto;
     top: 37em;
     box-shadow: 0 8px 8px 8px rgba(0, 0, 0, 0.2);
@@ -224,6 +223,83 @@ h3{
     letter-spacing: 0.05em;
     font-family: 'open-sans'
 }
+
+.chapel{
+  border-radius: 5px;
+  width: 200px;
+}
+
+.chapel h2{
+  color: black;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: center;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.name-church{
+  border-radius: 5px;
+  width: 380px;
+}
+
+.name-church h2{
+  color: black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.ministers{
+  border-radius: 5px;
+  width: 470px;
+}
+
+.ministers h2{
+  color: black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.table-container{
+ display: flex;
+ 
+}
+
+table, th, td{
+  border: 1px solid black;
+  border-radius: 15px;
+  color: black;
+  border-collapse: collapse;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+  flex: 70%;
+}
+
+
+
+.other-min li{
+  color: black;
+  flex: 30%;
+  padding: 5px;
+}
+
+.conference{
+  border-radius: 5px;
+  width: 520px;
+}
+
+.conference h2{
+  color: black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
 
 .profile-container{
     position: relative;
