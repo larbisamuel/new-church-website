@@ -224,6 +224,16 @@ nav a:hover {
     font-family: 'open-sans'
 }
 
+.join h2{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(84, 159, 178, 0.622);
+  margin-top: 50px;
+  text-shadow: 1px 2px 2px rgba(84, 159, 178, 0.7);
+}
+
 .chapel{
   border-radius: 5px;
   width: 200px;
@@ -298,6 +308,20 @@ table, th, td{
   padding-left: 20px;
   padding-bottom: 5px;
   box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
+.cloth-design{
+  border-radius: 5px;
+  width: 450px;
+}
+
+.cloth-design h2{
+  color: black;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+
 }
 
 

@@ -138,6 +138,13 @@ svg {
 }
 
 
+.generational-title h3{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  background-color: #1a1919;
+
+}
 
 .generational-grp{
   padding: 5px;
@@ -147,7 +154,7 @@ svg {
 
 
 .generational-grp p{
-  border-left: 2px solid black;
+  /* border-left: 2px solid black; */
   padding-left: 4px;
   font-size: 24px;
 }
@@ -221,6 +228,24 @@ svg {
 .btn-container{
 padding-top: 10px;
 margin-top: 20px;
+}
+
+table, th, td{
+  border: 1px solid black;
+  border-radius: 15px;
+  color: black;
+  border-collapse: collapse;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.purpose ul{
+  font-size: 22px;
+}
+
+.members ul{
+  font-size: 22px;
 }
 
 footer{
