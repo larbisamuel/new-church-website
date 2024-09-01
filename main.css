@@ -28,7 +28,7 @@ body {
  
 .container {
     position: relative;
-    max-width: 1024px;
+    max-width: 1025px;
     margin: 0 auto;
     padding: 0 20px; 
     color: white;
@@ -103,10 +103,10 @@ nav {
 
 nav a {
     text-decoration: none;
-    font-size: 17px;
+    font-size: 19px;
     margin: 0 15px;
     color: white;
-    padding: 10px;
+    padding: 20px;
 }
 
 nav a:hover {
@@ -323,7 +323,7 @@ section h5 {
 
 .news-container{
     margin: 40px 0px 10px 0px;
-    padding: 10px 65px 250px 65px;
+    padding: 10px 10px 100px 10px;
     color: white;
     border-top: 1px solid #194ede;
     height: auto;
@@ -390,7 +390,7 @@ section h5 {
 .card-img1 {
     width: 100%;
     height: auto;
-    max-height: 20rem;
+    max-height: 30rem;
     object-fit: cover;
 }
 
@@ -553,6 +553,9 @@ footer {
 }
 
 /* Media Queries */
+
+
+
 @media (max-width: 768px) {
     .logo-container {
         flex-direction: column;
@@ -568,7 +571,7 @@ footer {
     }
 
     .latest-flex1 {
-        grid-template-columns: 1fr; /* Single column on smaller screens */
+        grid-template-columns: 1fr; 
     }
 
     .welcome-address video {
@@ -597,6 +600,214 @@ footer {
 
     .card-text {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 344px) {
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 100%;
+        height: 320px; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 220px;
+        border-radius: 5px;
+        transform: translateX(10%);
+        margin-top: 10px;
+        font-size: 10px;
+        width: fit-content;
+    }
+}
+
+@media (max-width: 540px) {
+
+    nav {
+        flex-direction: column;
+    }
+
+    .search-input {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .latest-flex1-grid1,
+    .card-content {
+        padding: 10px;
+    }
+
+    .card-header {
+        font-size: 1.5rem;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+    }
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 100%;
+        height: 320px; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 220px;
+        border-radius: 5px;
+        transform: translateX(10%);
+        margin-top: 10px;
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 390px) {
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 100%;
+        height: auto; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 280px;
+        border-radius: 5px;
+        transform: translateX(10%);
+        margin-top: 10px;
+    }
+}
+
+
+
+
+@media (max-width: 770px) {
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 70%;
+        height: 520px; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 370px;
+        border-radius: 7px;
+        transform: translateX(80%);
+        margin-top: 10px;
+        padding: 10px;
+    }
+}
+
+
+
+
+@media (max-width: 430px) {
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 90%;
+        height: 320px; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 220px;
+        border-radius: 5px;
+        transform: translateX(10%);
+        margin-top: 10px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 90%;
+        height: 320px; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 220px;
+        border-radius: 5px;
+        transform: translateX(8%);
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 360px) {
+    .scroll {
+        position: relative;
+        top: 0;
+        right: 0;
+        margin-top: 20px; /* Adjust margin as needed */
+        padding-left: 0;
+        width: 100%;
+        text-align: center; /* Center the scroll content */
+    }
+    
+    .scroll img {
+        width: 100%;
+        height: 320px; /* Adjust image height for smaller screens */
+    }
+    
+    .scroll-button {
+        position: absolute;
+        top: 220px;
+        border-radius: 5px;
+        transform: translateX(5%);
+        margin-top: 10px;
     }
 }
 

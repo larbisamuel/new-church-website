@@ -61,13 +61,10 @@ nav a:hover {
   .sermon{
     border-radius: 5px;
     margin-top: 10px;
-    /* border: 2px solid black; */
     height: 470px;
     margin-right: 10px;
   }
-  .sermon h2{
-    
-  }
+  
 
   .sermon-image img{
     height: 400px;
@@ -128,15 +125,12 @@ nav a:hover {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 15px;
-    /* background-color: red; */
     border-radius: 5px;
-    /* border: 2px solid blue; */
     margin-bottom: 50px;
   }
 
   .lower-flex1-grid1{
     border-radius: 5px;
-    /* border: 2px solid rgb(43, 28, 158); */
     margin-bottom: 20px;
 
   }
@@ -147,14 +141,12 @@ nav a:hover {
 
   .lower-flex1-grid2{
     border-radius: 5px;
-    /* border: 2px solid rgb(216, 207, 80); */
     margin-bottom: 20px;
 
   }
 
   .lower-flex1-grid3{
     border-radius: 5px;
-    /* border: 2px solid rgb(179, 81, 159); */
     margin-bottom: 20px;
 
   }
