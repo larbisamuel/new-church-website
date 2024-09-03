@@ -1,4 +1,9 @@
-
+html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
 
 nav {
     background-color: #2E81DF;
@@ -87,8 +92,8 @@ nav a:hover {
   }
 
   .first-row-image img{
-    height: 170px;
-    width: 300px;
+    height: 172px;
+    width: 250px;
     border-radius: 5px;
   }
 
@@ -189,4 +194,80 @@ nav a:hover {
   footer {
     text-align: center;
     margin-top: 20px;
+}
+
+
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  nav a {
+      margin: 5px 0;
+      font-size: 14px;
+  }
+
+  .container {
+      padding: 20px;
+  }
+
+  .upper-flex {
+      flex-direction: column;
+  }
+
+  .sermon-image img {
+      height: auto;
+      width: 100%;
+  }
+
+  .other-posts-flex {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr;
+  }
+
+  .first-row, .second-row, .third-row {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .first-row-image img, .second-row img, .third-row img {
+      width: 100%;
+      height: auto;
+  }
+
+  .lower-flex1 {
+      grid-template-columns: 1fr;
+  }
+
+  .lower-flex1-img img {
+      width: 100%;
+      height: auto;
+  }
+
+  .lower-flex2 {
+      grid-template-columns: 1fr 1fr;
+  }
+
+  .lower-flex2-img img {
+      width: 100%;
+      height: auto;
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .sermon-image img {
+      height: auto;
+      width: 100%;
+  }
+
+  .lower-flex2 {
+      grid-template-columns: 1fr;
+  }
+
+  .lower-flex1 {
+      grid-template-columns: 1fr;
+  }
 }

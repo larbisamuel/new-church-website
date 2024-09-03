@@ -602,52 +602,8 @@
 
     </div>   
     <script src="./app.js"></script>
+    <script src="./app1.js"></script>
 
-    <script>
-        filterSelection("all")
-        function filterSelection(c) {
-          var x, i;
-          x = document.getElementsByClassName("column");
-          if (c == "all") c = "";
-          for (i = 0; i < x.length; i++) {
-            w3RemoveClass(x[i], "show");
-            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-          }
-        }
-        
-        function w3AddClass(element, name) {
-          var i, arr1, arr2;
-          arr1 = element.className.split(" ");
-          arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) {
-            if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-          }
-        }
-        
-        function w3RemoveClass(element, name) {
-          var i, arr1, arr2;
-          arr1 = element.className.split(" ");
-          arr2 = name.split(" ");
-          for (i = 0; i < arr2.length; i++) {
-            while (arr1.indexOf(arr2[i]) > -1) {
-              arr1.splice(arr1.indexOf(arr2[i]), 1);     
-            }
-          }
-          element.className = arr1.join(" ");
-        }
-        
-        
-        // Add active class to the current button (highlight it)
-        var btnContainer = document.getElementById("myBtnContainer");
-        var btns = btnContainer.getElementsByClassName("btn");
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].addEventListener("click", function(){
-            var current = document.getElementsByClassName("active");
-            current[0].className = current[0].className.replace(" active", "");
-            this.className += " active";
-          });
-        }
-        </script>
 
        
 </body>
@@ -656,74 +612,3 @@
     <p>Copyright © 2024 PCG, CHRIST CONG. KNUST. All rights reserved. Developed by</p>
 </footer>
 </html>
-
-<!-- <ul id="accordion">
-                    <li>
-                        <label for="first">Choir<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="first" checked>
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="second">Singing Band<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="second" >
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li><li>
-                        <label for="third">Bible Study & Prayer Group<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="third">
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li><li>
-                        <label for="fourth">Prayer<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="fourth" >
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li><li>
-                        <label for="fifth">Christ Youth Choir<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="fifth" >
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li><li>
-                        <label for="sixth">Talented Christian Singers<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="sixth" >
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li><li>
-                        <label for="seventh">Brigade<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="seventh">
-                        <div class="content1">
-                            <p>
-                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem consequuntur quisquam, exercitationem suscipit debitis consectetur earum ipsam vel aperiam officia. Modi voluptatum numquam, eaque tempora fuga perferendis molestias consequuntur quidem beatae cum repudiandae itaque, reprehenderit neque consequatur magni? Voluptates doloribus facilis ad. Ipsa dicta aspernatur voluptas recusandae laudantium aliquam minus?
-                            </p>
-                        </div>
-                    </li>
-                    <li>
-                        <label for="eight">Ushering Wing<span>&#x3e;</span></label>
-                        <input type="radio" name="accordion" id="eight" >
-                        <div class="contentU">
-                            <p>
-                                Lorem ipsum dolor,<br> sit amet consectetur adipisicing elit. Rem pariatur nobis officia voluptatibus laborum doloribus repellat laudantium non totam ipsum provident molestiae est voluptate, doloremque fugiat, praesentium ea. Labore perferendis dolorem dolorum rerum, quibusdam ratione in impedit suscipit dolore nesciunt. Consequuntur dolor repellat perferendis ipsa, vitae eius recusandae sit sed officia iure. Illo repudiandae a laborum similique facilis? Maiores velit mollitia qui omnis eveniet dolorem quaerat voluptatem nihil quo vero optio iusto inventore quasi, amet, repudiandae natus sapiente facere. Vitae saepe tempora quidem ad quo, ut ipsum tempore nemo nihil labore natus aperiam explicabo, aliquam voluptate iste, corrupti aliquid amet quod! Dolorem iste molestiae nihil? Fuga facere pariatur aliquid repellat, recusandae veniam magni dolor similique dolore, odit, magnam beatae enim quaerat ex! Libero fugiat maxime temporibus voluptatum expedita ipsum ad, officiis molestias, mollitia deserunt ex cumque asperiores iste, in est autem obcaecati consequatur dolore! Debitis nam reiciendis sit autem reprehenderit blanditiis incidunt iusto aliquam fuga, excepturi libero officia consequuntur quidem asperiores accusantium laboriosam molestias sapiente quia earum voluptates perspiciatis nemo et qui id? Ut laboriosam dolorem maiores nihil quo. Ea esse error reprehenderit aut quo obcaecati architecto expedita quam tempore vero, consequatur sunt, suscipit dolore explicabo. Soluta ratione ipsa aut.
-                            </p>
-                        </div>
-                    </li>
-                    
-                </ul> -->

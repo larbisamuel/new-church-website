@@ -34,13 +34,16 @@ nav {
     padding-left: 7px ;
     padding-right: 9px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     border-radius: 10px;
     margin-top: 20px;
 }
 
 .search-container {
+    flex-grow: 1;
     display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -162,6 +165,8 @@ svg {
 .row {
   margin: 40px -16px;
   color: black;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* Add padding BETWEEN each column */
@@ -172,11 +177,47 @@ svg {
 
 /* Create three equal columns that floats next to each other */
 .column {
+  display: flex;
+  flex-wrap: wrap;
   float: left;
   width: 22.50%;
   display: none; /* Hide all elements by default */
   border-radius: 7px;
   cursor: pointer;
+}
+
+@media (max-width: 700px) {
+  .row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: center; */
+  }
+  .content {
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+    width: 250%;
+    margin-left: 85px;
+  }
+
+  .btn-container{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+  }
+
+  .welcome h1{
+    font-size: 25px;
+  }
+
+  .welcome h2{
+    font-size: 20px;
+  }
+  
 }
 
 /* Clear floats after rows */ 
@@ -250,4 +291,25 @@ table, th, td{
 
 footer{
   text-align: center;
+}
+
+@media(max-width: 830px){
+
+  nav{
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+  .search-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+  .btn-container{
+    flex-direction: column;
+  }
+
+
 }
