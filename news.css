@@ -70,10 +70,14 @@ nav a:hover {
     margin-right: 10px;
   }
   
+  .sermon-image{
+    width: 500px;
+    height: 350px;
+  }
 
   .sermon-image img{
     height: 400px;
-    width: 570px;
+    width: 500px;
     border-radius: 10px;
   }
 
@@ -91,20 +95,30 @@ nav a:hover {
     display: flex;
   }
 
-  .first-row-image img{
-    height: 172px;
-    width: 250px;
-    border-radius: 5px;
-  }
-
-  .second-row{
+  /* .second-row{
     display: flex;
   }
 
   .third-row{
     display: flex;
-    
+  } */
+  .first-row-image img{
+    height: 172px;
+    width: 250px;
+    border-radius: 5px;
   }
+  .second-row-image img{
+    height: 172px;
+    width: 250px;
+    border-radius: 5px;
+  }
+  .third-row-image img{
+    height: 172px;
+    width: 250px;
+    border-radius: 5px;
+  }
+
+
 
   .lower-container{
     padding: 50px;
@@ -196,18 +210,146 @@ nav a:hover {
     margin-top: 20px;
 }
 
+@media (max-width:1150px){
 
-/* Media query for screens smaller than 768px */
-@media (max-width: 768px) {
+ .sermon{
+    border-radius: 5px;
+    margin-top: 10px;
+    height: 470px;
+    margin-right: 2px;
+  }
+
+  .sermon-image{
+    width: 500px;
+    height: 360px;
+  }
+
+  .sermon-image img{
+    height: 320px;
+    width: 450px;
+    border-radius: 10px;
+  } 
+
+  
+  .lower-flex1-img img{
+    height: 230px;
+    width: 320px;
+    border-radius: 5px;
+    z-index: -2;
+  }
+
+  .lower-flex1{
+    flex: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+  }
+
+  .lower-flex2{
+    flex: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap: 5px;
+    border-radius: 5px;
+    border-left: 0;
+  }
+
+  .first-row{
+    flex-direction: column;
+  }
+
+  .first-row-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .details h5 {
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .details p{
+    font-size: 12px;
+    margin-top: 6px;
+  }
+
+  
+
+}
+
+@media (max-width: 1590px){
+  .sermon-image img{
+    height: 350px;
+    width: 500px;
+    border-radius: 10px;
+  }
+  .second-row{
+    display: flex;
+  }
+
+  .third-row{
+    display: flex;
+  }
+  .lower-flex1-img img{
+    height: 230px;
+    width: 320px;
+    border-radius: 5px;
+    z-index: -2;
+  }
+
+  .lower-flex1{
+    flex: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 5px;
+    border-radius: 5px;
+    margin-bottom: 50px;
+  }
+
+  .lower-flex2{
+    flex: 50%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap: 5px;
+    border-radius: 5px;
+    border-left: 0;
+  }
+
+  .details h5 {
+    font-size: 13px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .details p{
+    font-size: 14px;
+    margin-top: 6px;
+  }
+
+}
+@media (max-width: 1146px) {
   nav {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
   }
 
   nav a {
       margin: 5px 0;
       font-size: 14px;
   }
+
+  .search-container {
+    margin-top: 10px; 
+}
+
+  .search-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
 
   .container {
       padding: 20px;
@@ -216,10 +358,27 @@ nav a:hover {
   .upper-flex {
       flex-direction: column;
   }
+  .sermon-heading{
+    text-align: center;
+  }
 
-  .sermon-image img {
-      height: auto;
-      width: 100%;
+  .sermon{
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 270px;
+    height: 600px;
+    margin-right: 2px;
+  }
+
+  .sermon-image{
+    width: 100%;
+    height: 500px;
+  }
+
+  .sermon-image img{
+    height: 550px;
+    width: 95%;
+    border-radius: 10px;
   }
 
   .other-posts-flex {
@@ -227,23 +386,50 @@ nav a:hover {
       grid-template-columns: 1fr;
   }
 
-  .first-row, .second-row, .third-row {
-      flex-direction: column;
-      align-items: center;
-  }
 
-  .first-row-image img, .second-row img, .third-row img {
-      width: 100%;
-      height: auto;
-  }
+
+  .first-row-image img{
+    width: 80%;
+    height: 80%;
+}
+
+.first-row{
+  margin-bottom: 80px;
+}
+
+.second-row{
+  margin-bottom: 80px;
+  flex-direction: column;
+}
+
+.third-row{
+  margin-bottom: 80px;
+  flex-direction: column;
+
+}
+
+.second-row-image img{
+  width: 80%;
+  height: 80%;
+}
+
+.third-row-image img {
+  width: 80%;
+  height: 80%;
+}
+
+
+.lower-flex2-img p{
+  font-size: 13px;
+}
 
   .lower-flex1 {
       grid-template-columns: 1fr;
   }
 
   .lower-flex1-img img {
-      width: 100%;
-      height: auto;
+      width: 70%;
+      height: 70%;
   }
 
   .lower-flex2 {
@@ -251,17 +437,91 @@ nav a:hover {
   }
 
   .lower-flex2-img img {
-      width: 100%;
-      height: auto;
+      width: 79%;
+      height: 79%;
+  }
+
+  footer p{
+    font-size: 13px;
   }
 }
 
 /* Media query for screens smaller than 480px */
 @media (max-width: 480px) {
+
+  .sermon{
+    margin-bottom: 50px;
+  }
   .sermon-image img {
       height: auto;
       width: 100%;
   }
+
+  .first-row-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.first-row{
+  margin-bottom: 80px;
+}
+
+.second-row{
+  margin-bottom: 80px;
+  flex-direction: column;
+}
+
+.third-row{
+  margin-bottom: 80px;
+  flex-direction: column;
+
+}
+
+.second-row-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.third-row-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.lower-flex1-grid1{
+  margin-bottom: 60px;
+}
+
+.lower-flex1-grid2{
+  margin-bottom: 60px;
+}
+
+
+.lower-flex1-img p{
+  font-size: 13px;
+}
+
+.lower-flex2-grid1{
+  margin-bottom: 60px;
+}
+
+
+
+  .lower-flex1-img img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.lower-flex2-img p{
+  font-size: 13px;
+}
+
+.lower-flex2-img img {
+  width: 100%;
+  height: 100%;
+}
+
+
 
   .lower-flex2 {
       grid-template-columns: 1fr;
@@ -270,4 +530,10 @@ nav a:hover {
   .lower-flex1 {
       grid-template-columns: 1fr;
   }
+
+  footer p{
+    font-size: 13px;
+  }
 }
+
+

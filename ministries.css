@@ -6,6 +6,7 @@ html {
   *, *:before, *:after {
     box-sizing: inherit;
   }
+
 .container {
    
     padding: 50px;
@@ -18,10 +19,11 @@ html {
 
   nav a {
     text-decoration: none;
-    font-size: 15px;
-    margin: 0 20px;
+    font-size: 17px;
+    margin: 0 65px;
     color: white;
     padding: 10px;
+    
 }
 
 nav a:hover {
@@ -31,8 +33,7 @@ nav a:hover {
 
 nav {
     background-color: #2E81DF;
-    padding-left: 7px ;
-    padding-right: 9px;
+    padding:10px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;

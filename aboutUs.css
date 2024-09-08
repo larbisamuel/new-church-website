@@ -40,52 +40,7 @@ nav {
   align-items: center;
 }
 
-/* .search-container {
-    display: flex;
-    align-items: center;
 
-
-nav {
-    background-color: #2E81DF;
-    padding: 10px;
-    display: flex;
-    flex-wrap: wrap; 
-    justify-content: space-between;
-    border-radius: 7px;
-    margin-top: 20px;
-}
-
-
-
-
-.search-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
-.search-input {
-    border-radius: 7px;
-    padding: 4px;
-    border: none;
-
-}
-
-
-nav a {
-    text-decoration: none;
-    font-size: 19px;
-    margin: 0 15px;
-    color: white;
-    padding: 20px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
-} */
 
 .search-input {
     border-radius: 7px;
