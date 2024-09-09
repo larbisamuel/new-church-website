@@ -46,63 +46,6 @@ nav a:hover {
     border-bottom: 0px;
   }
 
-  .upper-flex-container{
-    padding: 50px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    margin-top: 0px;
-  }
-
-  .upper-flex{
-    display: flex;
-    flex: 50%;
-  }
-
-  .sermon{
-    border-radius: 5px;
-    margin-top: 10px;
-    /* border: 2px solid black; */
-    height: 470px;
-    margin-right: 10px;
-  }
-  .sermon h2{
-    
-  }
-
-  .sermon-image img{
-    height: 400px;
-    width: 570px;
-    border-radius: 10px;
-  }
-
-  .other-posts{
-    flex: 50%;
-    height: 400px;
-  }
-  .other-posts-flex{
-    display: grid;
-    grid-template-rows: repeat(3, 170px);
-    margin-left: 10px;
-    grid-gap: 5px;
-  }
-  .first-row{
-    display: flex;
-  }
-
-  .first-row-image img{
-    height: 170px;
-    width: 300px;
-    border-radius: 5px;
-  }
-
-  .second-row{
-    display: flex;
-  }
-
-  .third-row{
-    display: flex;
-    
-  }
 
   .lower-container{
     padding: 50px;
@@ -120,51 +63,10 @@ nav a:hover {
   .lower-flex{
     display: flex;
     flex-direction: column ;
+    /* flex-wrap: wrap; */
     
   }
 
-  .lower-flex1{
-    flex: 50%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 15px;
-    /* background-color: red; */
-    border-radius: 5px;
-    /* border: 2px solid blue; */
-    margin-bottom: 50px;
-  }
-
-  .lower-flex1-grid1{
-    border-radius: 5px;
-    /* border: 2px solid rgb(43, 28, 158); */
-    margin-bottom: 20px;
-
-  }
-  .lower-flex1-grid1 p{
-    position: relative;
-    top: 8;
-  }
-
-  .lower-flex1-grid2{
-    border-radius: 5px;
-    /* border: 2px solid rgb(216, 207, 80); */
-    margin-bottom: 20px;
-
-  }
-
-  .lower-flex1-grid3{
-    border-radius: 5px;
-    /* border: 2px solid rgb(179, 81, 159); */
-    margin-bottom: 20px;
-
-  }
-
-  .lower-flex1-img img{
-    height: 220px;
-    width: 360px;
-    border-radius: 5px;
-    z-index: -2;
-  }
 
 .upcoming-events h2{
     border-left: 2px solid black;
@@ -175,10 +77,11 @@ nav a:hover {
   .lower-flex2{
     flex: 50%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-gap: 2px;
     border-radius: 5px;
     border-left: 0;
+    
   }
 
   
@@ -188,14 +91,449 @@ nav a:hover {
 
   }
 
+  .lower-flex2-img{
+    width: 350px;
+  }
+
   .lower-flex2-img img{
-    height: 220px;
-    width: 300px;
+    height: 350px;
+    width: 350px;
     border-radius: 5px;
   }
 
   footer {
     text-align: center;
     margin-top: 20px;
-    /* padding: 20px; */
 }
+
+.show-more{
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+.show-more p {
+  float: right;
+  color: red;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+
+.show-more p:hover{
+  color: blue;
+}
+
+.show-more p::after {
+  content: '→'; 
+  margin-left: 8px; 
+  font-weight: bold; 
+}
+
+
+@media (max-width:1150px){
+
+  .sermon{
+     border-radius: 5px;
+     margin-top: 10px;
+     height: 470px;
+     margin-right: 2px;
+   }
+ 
+   .sermon-image{
+     width: 500px;
+     height: 360px;
+   }
+ 
+   .sermon-image img{
+     height: 320px;
+     width: 450px;
+     border-radius: 10px;
+   } 
+ 
+   
+   .lower-flex1-img img{
+     height: 230px;
+     width: 320px;
+     border-radius: 5px;
+     z-index: -2;
+   }
+ 
+   .lower-flex1{
+     flex: 50%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr;
+     grid-gap: 5px;
+     border-radius: 5px;
+     margin-bottom: 50px;
+   }
+ 
+   .lower-flex2{
+     flex: 50%;
+     display: grid;
+     grid-template-columns: 1fr 1fr 1fr ;
+     grid-gap: 5px;
+     border-radius: 5px;
+     border-left: 0;
+   }
+ 
+   .first-row{
+     flex-direction: column;
+   }
+ 
+   .first-row-image img {
+     width: 100%;
+     height: auto;
+   }
+ 
+   .details h5 {
+     font-size: 12px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+   }
+ 
+   .details p{
+     font-size: 12px;
+     margin-top: 6px;
+   }
+ 
+   
+ 
+ }
+ 
+
+ @media (max-width: 1146px) {
+   nav {
+       flex-direction: column;
+       align-items: center;
+   }
+ 
+   nav a {
+       margin: 5px 0;
+       font-size: 14px;
+   }
+ 
+   .search-container {
+     margin-top: 10px; 
+ }
+ 
+   .search-input {
+     width: 100%;
+     margin-top: 10px;
+     margin-bottom: 10px;
+ }
+ 
+   .container {
+       padding: 20px;
+   }
+
+   .lower-container{
+    padding-left: 70px;
+   }
+ 
+   .upper-flex {
+       flex-direction: column;
+   }
+   .sermon-heading{
+     text-align: center;
+   }
+ 
+   .sermon{
+     border-radius: 5px;
+     margin-top: 10px;
+     margin-bottom: 270px;
+     height: 600px;
+     margin-right: 2px;
+   }
+ 
+   .sermon-image{
+     width: 100%;
+     height: 500px;
+   }
+ 
+   .sermon-image img{
+     height: 550px;
+     width: 95%;
+     border-radius: 10px;
+   }
+ 
+   .other-posts-flex {
+       grid-template-rows: 1fr;
+       grid-template-columns: 1fr;
+   }
+ 
+ 
+ 
+   .first-row-image img{
+     width: 80%;
+     height: 80%;
+ }
+ 
+ .first-row{
+   margin-bottom: 80px;
+ }
+ 
+ .second-row{
+   margin-bottom: 80px;
+   flex-direction: column;
+ }
+ 
+ .third-row{
+   margin-bottom: 80px;
+   flex-direction: column;
+ 
+ }
+ 
+ .second-row-image img{
+   width: 80%;
+   height: 80%;
+ }
+ 
+ .third-row-image img {
+   width: 80%;
+   height: 80%;
+ }
+ 
+ 
+ .lower-flex2-img p{
+   font-size: 13px;
+ }
+ 
+   .lower-flex1 {
+       grid-template-columns: 1fr;
+   }
+ 
+   .lower-flex1-img img {
+       width: 70%;
+       height: 70%;
+   }
+ 
+   .lower-flex2 {
+       grid-template-columns: 1fr 1fr;
+   }
+ 
+   .lower-flex2-img img {
+       width: 95%;
+       height: 95%;
+   }
+   
+   .lower-flex2-img{
+    width: 250px;
+  }
+
+  .show-more p {
+    float: left;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+  }
+ 
+   footer p{
+     font-size: 13px;
+   }
+ }
+
+
+ @media (max-width: 630px){
+  .sermon{
+    margin-bottom: 50px;
+  }
+  .sermon-image img {
+      height: auto;
+      width: 100%;
+  }
+
+  .lower-container{
+    padding-left: 50px;
+  }
+
+  .first-row-image img{
+    width: 100%;
+    height: 100%;
+}
+
+.first-row{
+  margin-bottom: 80px;
+}
+
+.second-row{
+  margin-bottom: 80px;
+  flex-direction: column;
+}
+
+.third-row{
+  margin-bottom: 80px;
+  flex-direction: column;
+
+}
+
+.second-row-image img{
+  width: 100%;
+  height: 100%;
+}
+
+.third-row-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.lower-flex1-grid1{
+  margin-bottom: 60px;
+}
+
+.lower-flex1-grid2{
+  margin-bottom: 60px;
+}
+
+
+.lower-flex1-img p{
+  font-size: 13px;
+}
+
+.lower-flex2-grid1{
+  margin-bottom: 60px;
+}
+
+
+
+  .lower-flex1-img img {
+    width: 100%;
+    height: 100%;
+    
+}
+
+.lower-flex2-img p{
+  font-size: 13px;
+}
+
+.lower-flex2-img img {
+  width: 80%;
+  height: 60%;
+}
+
+.lower-flex2-img{
+ width: 190px;
+}
+
+
+
+  .lower-flex2 {
+      grid-template-columns: 1fr 1fr;
+  }
+
+
+  footer p{
+    font-size: 13px;
+  }
+
+  .show-more p {
+   float: left;
+   color: red;
+   font-size: 15px;
+   cursor: pointer;
+ }
+ }
+ 
+ 
+ /* Media query for screens smaller than 480px */
+ @media (max-width: 480px) {
+ 
+   .sermon{
+     margin-bottom: 50px;
+   }
+   .sermon-image img {
+       height: auto;
+       width: 100%;
+   }
+ 
+   .first-row-image img{
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .first-row{
+   margin-bottom: 80px;
+ }
+ 
+ .second-row{
+   margin-bottom: 80px;
+   flex-direction: column;
+ }
+ 
+ .third-row{
+   margin-bottom: 80px;
+   flex-direction: column;
+ 
+ }
+ 
+ .second-row-image img{
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .third-row-image img {
+   width: 100%;
+   height: 100%;
+ }
+ 
+ .lower-flex1-grid1{
+   margin-bottom: 60px;
+ }
+ 
+ .lower-flex1-grid2{
+   margin-bottom: 60px;
+ }
+ 
+ 
+ .lower-flex1-img p{
+   font-size: 13px;
+ }
+ 
+ .lower-flex2-grid1{
+   margin-bottom: 60px;
+ }
+ 
+ 
+ 
+   .lower-flex1-img img {
+     width: 100%;
+     height: 100%;
+     
+ }
+ 
+ .lower-flex2-img p{
+   font-size: 13px;
+ }
+ 
+ .lower-flex2-img img {
+   width: 70%;
+   height: 60%;
+ }
+
+ .lower-flex2-img{
+  width: 250px;
+}
+
+ 
+ 
+   .lower-flex2 {
+       grid-template-columns: 1fr;
+   }
+ 
+   .lower-flex1 {
+       grid-template-columns: 1fr;
+   }
+ 
+   footer p{
+     font-size: 13px;
+   }
+
+   .show-more p {
+    float: left;
+    color: red;
+    font-size: 15px;
+    cursor: pointer;
+  }
+ }
+ 
+
+ 
