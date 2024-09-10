@@ -10,28 +10,32 @@
 </head>
 
 <body>
-    <div class="container">
+    <script src="main.js"></script>
+    <div id="top" class="container">
         <div class="background-overlay"></div>
-        <header>
-            <div class="logo-container">
-                <img src="images/PCG logo.png" alt="Presby logo" class="logo PCG-logo">
-                <h2>WELCOME TO THE CHRIST CONGREGATION, <br>KNUST-TEK DISTRICT</h2>
-                <img src="images/KNUST LOGO PNG.png" alt="KNUST logo" class="logo KNUST-logo">
-            </div>
-            <h5>PEACE BE UNTO YOU!</h5>
-        </header>
-        <nav>
-            <a href="homePage.html">Home</a>
-            <a href="aboutUs.html">About Us</a>
-            <a href="news.html">News</a>
-            <a href="gallery.html">Gallery</a>
-            <a href="ministries.html">Ministries</a>
-            <a href="contactUs.html">Contact Us</a>
-            <div class="search-container">
-                <input type="text" placeholder="Search..." class="search-input">
-            </div>
-        </nav>
+        <div class="top-part">
+            <header>
+                <div class="logo-container">
+                    <img src="images/PCG logo.png" alt="Presby logo" class="logo PCG-logo">
+                    <h2>WELCOME TO THE CHRIST CONGREGATION, <br>KNUST-TEK DISTRICT</h2>
+                    <img src="images/KNUST LOGO PNG.png" alt="KNUST logo" class="logo KNUST-logo">
+                </div>
+                <h5>PEACE BE UNTO YOU!</h5>
+            </header>
 
+        
+            <nav>
+                <a href="homePage.html">Home</a>
+                <a href="aboutUs.html">About Us</a>
+                <a href="news.html">News</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="ministries.html">Ministries</a>
+                <a href="contactUs.html">Contact Us</a>
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+            </nav>
+        </div>
         <main>
            
             <section>
@@ -47,9 +51,31 @@
                         <source src="videos/YPG recap.mp4" type="video/mp4">
                     </video>
                     <aside>
+                    
+                        <!-- Modal content -->
+                        <div class="modal-new" id="myModal">
+                            <div class="modal-content-new">
+                                <div class="modal-header-new">
+                                    <span class="close">&times;</span>
+
+                                    <p>Steps to Make Payment </p>
+                                </div>
+                                <div class="modal-body-new">
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                    <p>Lorem ipsum dolor sit amet consectetur.</p>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="scroll">
                             <img src="images/SCROLL PNG.png">
-                            <button class="scroll-button">CLICK TO MAKE PAYMENT</button>
+                            <button class="scroll-button" onclick="myFunction()">CLICK TO MAKE PAYMENT</button>
                         </div>
                     </aside>
                 </div> 
@@ -299,9 +325,12 @@
                                 <td>Health Sunday</td>
                             </tr>
                         </table>
-                        
+                     <div class="back-to-top">
+                        <p><a href="#top">Back to Top</a></p>
+                    </div>   
                     </div>
-                  
+
+                    
             </section>
 
             

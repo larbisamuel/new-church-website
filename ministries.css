@@ -99,6 +99,15 @@ nav {
   font-size: 1.2rem;
 }
 
+.back-to-top{
+  float: right;
+  margin-top: 10px;
+}
+
+.back-to-top p{
+  font-size: 15px;
+}
+
 .answer{
   max-height: 0;
   overflow: scroll;
