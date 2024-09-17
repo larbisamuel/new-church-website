@@ -1,0 +1,359 @@
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+.container {
+   
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+
+
+
+  nav a {
+    text-decoration: none;
+    font-size: 17px;
+    margin: 0 65px;
+    color: white;
+    padding: 10px;
+    
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+nav {
+    background-color: #2E81DF;
+    padding:10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.search-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.search-input {
+    border-radius: 7px;
+    padding: 4px;
+    border: none;
+
+}
+
+.welcome{
+    margin-top: 20px;
+}
+
+.welcome h1{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 100;
+    font-style: italic;
+    border-bottom: 1px solid rgb(48, 158, 202);
+}
+
+.welcome p{
+  font-size: 20px;
+}
+.interest-title{
+  background-color: #1a1919;
+}
+.interest-title h3 {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+
+.faq{
+  max-width: 900px;
+  margin-top: 0.3rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #1a1919;
+  cursor: pointer;
+
+}
+
+.question{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question h3{
+  font-size: 1.2rem;
+}
+
+.back-to-top{
+  float: right;
+  margin-top: 10px;
+}
+
+.back-to-top p{
+  font-size: 15px;
+}
+
+.answer{
+  max-height: 0;
+  overflow: scroll;
+  transition: max-height 1.0s ease;
+}
+
+.answer p{
+  padding-top: 0.2rem;
+  line-height: 26px;
+  font-size: 1.4rem;
+}
+
+.faq.active .answer{
+  max-height: 300px;
+}
+
+.faq.active svg{
+  transform: rotate(180deg);
+  
+}
+
+svg {
+  transition: transform 0.5s ease-in;
+}
+
+@keyframes fade {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0px);
+  }
+}
+
+
+.interest-grp{
+  padding: 5px;
+}
+
+
+.generational-title h3{
+  color: white;
+  font-size: 40px;
+  text-align: center;
+  background-color: #1a1919;
+
+}
+
+.generational-grp{
+  padding: 5px;
+  background-color: #f1f4f8;
+  margin-top: 10px;
+}
+
+
+.generational-grp p{
+  /* border-left: 2px solid black; */
+  padding-left: 4px;
+  font-size: 24px;
+}
+
+.row {
+  margin: 40px -16px;
+  color: black;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 5px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  width: 22.50%;
+  display: none; /* Hide all elements by default */
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+
+
+@media (max-width: 700px) {
+  .row{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /* align-items: center; */
+  }
+  .content {
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+    width: 250%;
+    margin-left: 85px;
+  }
+
+  .btn-container{
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid black;
+    border-top: 1px solid black;
+  }
+
+  .welcome h1{
+    font-size: 25px;
+  }
+
+  .welcome h2{
+    font-size: 20px;
+  }
+  
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: rgb(239, 239, 239);
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+  transition: 0.2s;
+
+}
+
+.content:hover{
+  transition: translateY(-0.7%);
+  /* overflow: hidden; */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  background-color: white;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #8c7e7e;
+  color: white;
+}
+
+.btn-container{
+padding-top: 10px;
+margin-top: 20px;
+}
+
+table, th, td{
+  border: 1px solid black;
+  border-radius: 15px;
+  color: black;
+  border-collapse: collapse;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+}
+
+.purpose ul{
+  font-size: 22px;
+}
+
+.members ul{
+  font-size: 22px;
+}
+
+footer{
+  text-align: center;
+}
+
+@media(max-width: 830px){
+
+  nav{
+    flex-direction: column;
+    text-align: center;
+
+  }
+
+  .search-input {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+  .btn-container{
+    flex-direction: column;
+  }
+
+
+}
+
+@media(max-width: 480px){
+  .content{
+    margin-left: 30px;
+    width: 350%;
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    border-radius: 7px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
+    transition: 0.2s;
+    width: 240px;
+  }
+
+  .welcome h1{
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .welcome h2{
+    font-size: 18px;
+  }
+
+  .interest-title h3{
+    font-size: 32px;
+  }
+
+  .generational-title h3{
+    font-size: 28px;
+  }
+
+  
+}

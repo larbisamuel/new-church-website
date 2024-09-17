@@ -1,0 +1,55 @@
+html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+.container {
+    
+    padding-top: 25px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 50px;
+    border-bottom: 0px;
+  }
+
+  .upper-container{
+    /* display: flex;
+    flex: 90%; */
+    width: 100%;
+  }
+
+  .upper-image{
+    max-width: 550px;
+    height: 500px;
+    border: 2px solid #ccc;
+    margin-left: 20px;
+    background-image: url("images/Dad.jpeg");
+    background-size: cover;
+  }
+
+ 
+
+ 
+  .upper-content{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .content-flex{
+    display: flex;
+    flex: 50%;
+    gap: 50px;
+  }
+
+  .content-flex  p{
+    text-align: justify;
+  }
+
+  .upper-content p{
+    font-size: 16px;
+    line-height: 2em;
+    font-weight: lighter;
+    color: #666161;
+  }

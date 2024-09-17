@@ -1,0 +1,15 @@
+/* style.css */
+.gallery {
+    display: flex;
+    gap: 20px;
+}
+
+.clickable-image {
+    width: 150px;
+    cursor: pointer;
+}
+
+#image-details {
+    margin-top: 20px;
+}
+

@@ -1,0 +1,94 @@
+/* src/components/Navbar.css */
+.navbar {
+    /* background-color: #333; */
+    padding: 10px;
+}
+
+.navbar-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navbar-list li a {
+    /* color: white; */
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.navbar-list li a:hover{
+    background-color: #ddd;
+
+}
+.navbar-list li a:active{
+    background-color: #666;
+    color: white;
+}
+
+.page {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    border-radius: 4px;
+}
+
+th {
+    background-color: #f4f4f4;
+    border-bottom: 2px solid #ddd;
+}
+
+td img {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.add-button {
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-button:hover {
+    background-color: #45a049;
+}
+
+button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #007bb5;
+}
+
+button:focus {
+    outline: none;
+}
