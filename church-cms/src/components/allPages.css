@@ -92,3 +92,9 @@ button:hover {
 button:focus {
     outline: none;
 }
+
+.table-image{
+    width: 250px;
+    height: 100px;
+    object-fit: cover;
+}
