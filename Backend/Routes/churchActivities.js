@@ -15,11 +15,11 @@ router.get('/', async (req, res) => {
 
 // Add new church activity
 router.post('/', async (req, res) => {
-    const { title, date, time } = req.body;
+    const { title, time } = req.body;
     try {
         const result = await pool.query(
-            'INSERT INTO church_activities (title, date, time) VALUES ($1, $2, $3) RETURNING *',
-            [title, date, time]
+            'INSERT INTO church_activities (title, time) VALUES ($1, $2) RETURNING *',
+            [title, time]
         );
         res.json(result.rows[0]);
     } catch (err) {
@@ -31,11 +31,11 @@ router.post('/', async (req, res) => {
 // Update a church activity
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { title, date, time } = req.body;
+    const { title, time } = req.body;
     try {
         const result = await pool.query(
-            'UPDATE church_activities SET title = $1, date = $2, time = $3 WHERE id = $4 RETURNING *',
-            [title, date, time, id]
+            'UPDATE church_activities SET title = $1, time = $2 WHERE id = $3 RETURNING *',
+            [title, time, id]
         );
         res.json(result.rows[0]);
     } catch (err) {
