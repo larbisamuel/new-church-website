@@ -26,6 +26,7 @@ const nextWeekServiceRoutes = require('./Routes/nextWeekService');
 const churchActivitiesRoutes = require('./Routes/churchActivities');
 const eventTableRoutes = require('./Routes/eventTable');
 const ministersRoutes = require('./Routes/leadersProfiles');
+const catechistsRoutes = require('./Routes/catechists');
 const newsRoutes = require('./Routes/news');
 const galleryRoutes = require('./Routes/gallery');
 
@@ -38,6 +39,7 @@ app.use('/api/next-week-service', nextWeekServiceRoutes);
 app.use('/api/church-activities', churchActivitiesRoutes);
 app.use('/api/event-table', eventTableRoutes);
 app.use('/api/ministers', ministersRoutes);
+app.use('/api/catechists', catechistsRoutes);
 app.use('/api/news', newsRoutes);
 app.use('/api/gallery', galleryRoutes);
 app.use('/uploads', express.static('uploads'));

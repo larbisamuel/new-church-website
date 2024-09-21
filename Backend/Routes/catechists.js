@@ -15,10 +15,10 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
-// Get all ministers
+// Get all catechists
 router.get('/', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM ministers ORDER BY created_at DESC');
+        const result = await pool.query('SELECT * FROM catechists ORDER BY created_at DESC');
         res.json(result.rows);
     } catch (err) {
         console.error(err);
@@ -35,7 +35,7 @@ router.post('/', upload.single('image'), async (req, res) => {
 
     try {
         const result = await pool.query(
-            'INSERT INTO ministers (title, description, image_url) VALUES ($1, $2, $3) RETURNING *',
+            'INSERT INTO catechists (title, description, image_url) VALUES ($1, $2, $3) RETURNING *',
             [title, description, imageUrl]
         );
 
@@ -46,7 +46,7 @@ router.post('/', upload.single('image'), async (req, res) => {
     }
 });
 
-// Update a leader profile
+// Update a catechists profile
 router.put('/:id', upload.single('image'), async (req, res) => {
     const { id } = req.params;
     const { title, description } = req.body;
@@ -54,7 +54,7 @@ router.put('/:id', upload.single('image'), async (req, res) => {
 
     try {
         const result = await pool.query(
-            'UPDATE ministers SET title = $1, description = $2, image_url = $3 WHERE id = $4 RETURNING *',
+            'UPDATE catechists SET title = $1, description = $2, image_url = $3 WHERE id = $4 RETURNING *',
             [title, description, imageUrl, id]
         );
         res.json(result.rows[0]);
@@ -64,12 +64,12 @@ router.put('/:id', upload.single('image'), async (req, res) => {
     }
 });
 
-// Delete a leader profile
+// Delete a catechists profile
 router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     try {
-        await pool.query('DELETE FROM ministers WHERE id = $1', [id]);
-        res.send('Leader profile deleted');
+        await pool.query('DELETE FROM catechists WHERE id = $1', [id]);
+        res.send('catechists profile deleted');
     } catch (err) {
         console.error(err);
         res.status(500).send('Server error');

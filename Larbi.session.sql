@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS latest_news, upcoming_events, birthdays, weddings, next_week_service, church_activities, event_table, leaders_profiles, news, gallery CASCADE;
+DROP TABLE IF EXISTS latest_news, upcoming_events, birthdays, weddings, next_week_service, church_activities, event_table, ministers, catechists, news, gallery CASCADE;
 
 CREATE TABLE latest_news (
     id SERIAL PRIMARY KEY,
@@ -61,8 +61,16 @@ CREATE TABLE event_table (
 
 CREATE TABLE ministers (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    description TEXT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE catechists (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
