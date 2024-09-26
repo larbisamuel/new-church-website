@@ -241,12 +241,19 @@ section h5 {
     margin-bottom: 50px;
 }
 
+.latest-flex2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    grid-gap: 10px;
+    margin-bottom: 50px;
+}
+
   .latest-flex1-grid1{
     border-radius: 5px;
   }
 
   .latest-flex1-image img {
-    height: auto;
+    height: 320px;
     width: 100%;
     max-width: 300px;
     border-radius: 5px;
@@ -254,9 +261,6 @@ section h5 {
     cursor: pointer;
     transition: 0.2s;
 }
-
-
-
 
   .latest-flex1-image img:hover {
     transform: translateY(-2%);
@@ -498,32 +502,25 @@ section h5 {
     margin-bottom: 1.5rem;
 }
 
-
 .next-service{
-    background-color: rgb(245, 248, 250);
+    border-top: 3px solid black;
+    margin-top: 70px;
 }
 
-.next-service h1{
-    text-decoration: dashed;
+.theme-title h1{
     font-size: 3rem;
     font-weight: 200;
-    background-color: #5a5c5f;
     border-top: 4px solid red;
     width: 320px;
-    margin-bottom: 2px;
-    margin-top: 1px;
     padding-left: 5px;
     z-index: -5;
-
+    margin-top: 0px;
+    background-color: #5a5c5f;
 }
 
-.next-service p{
-    color: black;
-}
+
 .theme{
     border: #0d0d0d;
-    border-top: 3px solid black;
-    border-bottom: 1px solid black;
     padding-left: 5px;
     margin-top: 60px;
 }
@@ -532,15 +529,17 @@ section h5 {
     font-size: 20px;
     font-family: "poppins";
     padding: 2px;
-    
+    color: black;
 }
 
 .theme h2{
     margin-top: 20px;
     margin-bottom: 2px;
+    border-top: none;
+    font-size: 30px;
 }
 
-.next-service h4{
+.theme h4{
     color: black;
     font-size: 22px;
     font-weight: 80;
@@ -548,50 +547,41 @@ section h5 {
 }
 
 
+.church-activities {
+    border-top: 3px solid black;
+    margin-top: 70px;
+}
 
-
-.church-activities h1{
-    text-decoration: dashed;
+.theme1-title h1{
     font-size: 3rem;
     font-weight: 200;
     background-color: #295aa3;
     border-top: 4px solid red;
     width: 320px;
-    margin-bottom: 2px;
-    margin-top: 1px;
     padding-left: 5px;
     z-index: -5;
+    margin-top: 0px;
+
 
 }
 
 
 .theme1{
-    border: #0d0d0d;
-    border-top: 3px solid black;
+    /* border: #0d0d0d; */
+    /* border-top: 3px solid black; */
     padding-left: 5px;
-    margin-top: 60px;
+    padding-top: 15px;
 }
 
-.theme1 p {
-    font-size: 20px;
-    font-family: "poppins";
-    padding: 2px;
-    
-}
+
 
 .theme1 h2{
-    margin-top: 20px;
+    margin-top: 5px;
     margin-bottom: 2px;
     font-weight: 100;
     font-family: 'Times New Roman', Times, serif;
 }
 
-.church-activities h4{
-    color: rgb(0, 0, 0);
-    font-size: 22px;
-    font-weight: 80;
-    padding-bottom: 0px;
-}
 
 table {
     border-collapse: collapse;

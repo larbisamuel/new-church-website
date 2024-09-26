@@ -85,8 +85,9 @@ CREATE TABLE news (
 
 CREATE TABLE gallery (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    description TEXT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
     image_url VARCHAR(255),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
