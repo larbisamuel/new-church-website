@@ -5,7 +5,7 @@ const pool = require('../db');
 // Get all nextweekservice
 router.get('/', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM next_week_service ORDER BY created_at DESC');
+        const result = await pool.query('SELECT * FROM next_week_service ORDER BY created_at DESC LIMIT 1');
         res.json(result.rows);
     } catch (err) {
         console.error(err);

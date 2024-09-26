@@ -14,6 +14,18 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+
+//Get 3 birthdays
+router.get('/', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM birthdays ORDER BY created_at DESC LIMIT 3' );
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+});
+
 // Get all birthdays
 router.get('/', async (req, res) => {
     try {

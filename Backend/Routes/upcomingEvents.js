@@ -15,6 +15,16 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 
+router.get('/top3', async (req, res) => {
+    try {
+        const result = await pool.query('SELECT * FROM upcoming_events ORDER BY created_at DESC LIMIT 3' );
+        res.json(result.rows);
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server error');
+    }
+});
+
 // Get all upcoming_events
 router.get('/', async (req, res) => {
     try {

@@ -5,7 +5,7 @@ const pool = require('../db');
 // Get all events
 router.get('/', async (req, res) => {
     try {
-        const result = await pool.query('SELECT * FROM event_table ORDER BY date ASC');
+        const result = await pool.query('SELECT * FROM event_table ORDER BY created_at ASC');
         res.json(result.rows);
     } catch (err) {
         console.error(err);
