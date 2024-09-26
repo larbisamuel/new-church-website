@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './modal.css';
 
 const Modal2 = ({ show, onClose, onSubmit, title, currentData }) => {
@@ -12,6 +12,12 @@ const Modal2 = ({ show, onClose, onSubmit, title, currentData }) => {
         suggested_hymns: currentData?.suggested_hymns || ''
     });
 
+ useEffect(() => {
+   if(currentData)  {
+    setFormData(currentData || '');
+   }
+ }, [currentData]);
+    
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });

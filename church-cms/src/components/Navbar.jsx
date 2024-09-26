@@ -26,8 +26,8 @@ const Navbar = () => {
                 <li><Link to="/about-us">About Us</Link></li>
                 <li><Link to="/news">News</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>
-                <li><Link to="/ministries">Ministries</Link></li>
-                <li><Link to="/contact-us">Contact Us</Link></li>
+                {/* <li><Link to="/ministries">Ministries</Link></li> */}
+                {/* <li><Link to="/contact-us">Contact Us</Link></li> */}
                 <button>Publish</button>
             </ul>
         </nav>

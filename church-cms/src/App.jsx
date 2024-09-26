@@ -5,7 +5,7 @@ import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import News from './components/News';
 import Gallery from './components/Gallery';
-import Ministries from './components/Ministries';
+// import Ministries from './components/Ministries';
 import ContactUs from './components/ContactUs';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
                     <Route path="/about-us" element={<AboutUs />} />
                     <Route path="/news" element={<News />} />
                     <Route path="/gallery" element={<Gallery />} />
-                    <Route path="/ministries" element={<Ministries />} />
+                    {/* <Route path="/ministries" element={<Ministries />} /> */}
                     <Route path="/contact-us" element={<ContactUs />} />
                 </Routes>
             </div>

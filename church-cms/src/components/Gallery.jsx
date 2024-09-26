@@ -1,43 +1,82 @@
 // src/pages/Gallery.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from '../components/Modal';
-import "./allPages.css"
+import "./allPages.css";
+import Axios from 'axios';
+
 
 const Gallery = () => {
-    const [modalOpen, setModalOpen] = useState(false);
-    const [currentEditData, setCurrentEditData] = useState(null);
-    const [galleryItems, setGalleryItems] = useState([
-        { id: 1, title: "Gallery 1", description: "Gallery Description 1", image: "gallery1.jpg" },
-        { id: 2, title: "Gallery 2", description: "Gallery Description 2", image: "gallery2.jpg" },
-    ]);
+    
+    const [gallery, setGallery] = useState([]);
+    const [loadingGallery, setLoadingGallery] = useState(true);
+    const [errorGallery, setErrorGallery] = useState(null);
+    const [modalOpenGallery, setModalOpenGallery] = useState(false);
+    const [currentEditGallery, setCurrentEditGallery] = useState(null);
 
-    const handleAddNew = () => {
-        setCurrentEditData(null);
-        setModalOpen(true);
+
+     // Fetch Gallery
+     useEffect(() => {
+        const fetchGallery = async () => {
+            try {
+                const response = await Axios.get('http://localhost:3000/api/gallery');
+                setGallery(response.data);
+                setLoadingGallery(false);
+            } catch (error) {
+                setErrorGallery('Failed to fetch latest news.');
+                setLoadingGallery(false);
+            }
+        };
+        fetchGallery();
+    }, []);
+    
+    const handleAddGallery = () => {
+        setCurrentEditGallery(null);
+        setModalOpenGallery(true);
     };
 
-    const handleEdit = (galleryItem) => {
-        setCurrentEditData(galleryItem);
-        setModalOpen(true);
+    const handleEditGallery = (item) => {
+        setCurrentEditGallery(item);
+        setModalOpenGallery(true);
     };
 
-    const handleDelete = (id) => {
-        setGalleryItems(galleryItems.filter(galleryItem => galleryItem.id !== id));
-    };
+    const handleDeleteGallery = async (id) => {
+        const confirmed = window.confirm('Are you sure you want to delete this gallery item?');
+        if (confirmed) {
+            try {
+                await Axios.delete(`http://localhost:3000/api/gallery/${id}`);
+                setGallery(gallery.filter(item => item.id !== id));
+            } catch (error) {
+                console.error('Error deleting gallery item:', error);
+            }
+        }    };
 
-    const handleSubmit = (newData) => {
-        if (currentEditData) {
-            setGalleryItems(galleryItems.map(galleryItem => (galleryItem.id === currentEditData.id ? { ...galleryItem, ...newData } : galleryItem)));
-        } else {
-            const newGalleryItem = { ...newData, id: galleryItems.length + 1 };
-            setGalleryItems([...galleryItems, newGalleryItem]);
-        }
-    };
+    const handleSubmitGallery = async (newData) => {
+            const formData = new FormData();
+            formData.append('title', newData.title);
+            formData.append('description', newData.description);
+            if (newData.image) formData.append('image', newData.image);
+    
+            try {
+                if (currentEditGallery) {
+                    // Update gallery
+                    const response = await Axios.put(`http://localhost:3000/api/gallery/${currentEditGallery.id}`, formData);
+                    setGallery(gallery.map(item => item.id === currentEditGallery.id ? response.data : item));
+                } else {
+                    // Create gallery
+                    const response = await Axios.post('http://localhost:3000/api/gallery', formData);
+                    setGallery([...gallery, response.data]);
+                }
+            } catch (error) {
+                console.error('Error submitting news item:', error);
+            }
+            setModalOpenGallery(false);
+        };
+    
 
     return (
         <div className="gallery-page">
             <h1>Gallery</h1>
-            <button className="add-button" onClick={handleAddNew}>Add New Image</button>
+            <button className="add-button" onClick={handleAddGallery}>Add New Image</button>
             <table>
                 <thead>
                     <tr>
@@ -48,14 +87,14 @@ const Gallery = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {galleryItems.map(galleryItem => (
-                        <tr key={galleryItem.id}>
-                            <td><img src={galleryItem.image} alt="Thumbnail" width="50" /></td>
-                            <td>{galleryItem.title}</td>
-                            <td>{galleryItem.description}</td>
+                    {gallery.map(item => (
+                        <tr key={item.id}>
+                            <td><img src={`http://localhost:3000${item.image_url}`} alt="Thumbnail" className='table-image' /></td>
+                            <td>{item.title}</td>
+                            <td>{item.description}</td>
                             <td>
-                                <button onClick={() => handleEdit(galleryItem)}>Edit</button>
-                                <button onClick={() => handleDelete(galleryItem.id)}>Delete</button>
+                                <button onClick={() => handleEditGallery(item)}>Edit</button>
+                                <button onClick={() => handleDeleteGallery(item.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
@@ -63,11 +102,11 @@ const Gallery = () => {
             </table>
 
             <Modal
-                show={modalOpen}
-                onClose={() => setModalOpen(false)}
-                onSubmit={handleSubmit}
-                title={currentEditData ? "Edit Image" : "Add New Image"}
-                currentData={currentEditData}
+                show={modalOpenGallery}
+                onClose={() => setModalOpenGallery(false)}
+                onSubmit={handleSubmitGallery}
+                title={currentEditGallery ? "Edit Image" : "Add New Image"}
+                currentData={currentEditGallery}
             />
         </div>
     );

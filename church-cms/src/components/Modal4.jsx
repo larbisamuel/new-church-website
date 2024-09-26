@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './modal.css';
 
 const Modal4 = ({ show, onClose, onSubmit, title, currentData }) => {
@@ -7,6 +7,12 @@ const Modal4 = ({ show, onClose, onSubmit, title, currentData }) => {
         activity: currentData?.activity || '',
     });
 
+    useEffect(() => {
+        if(currentData)  {
+         setFormData(currentData || '');
+        }
+      }, [currentData]);
+      
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({ ...formData, [name]: value });
