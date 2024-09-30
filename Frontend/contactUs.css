@@ -1,14 +1,57 @@
 html {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     box-sizing: border-box;
     
 }
-
-.body{
-    min-height: 100vh;
+nav {
+  background-color: #2E81DF;
+  padding-left: 7px ;
+  padding-right: 9px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin-top: 20px;
 }
+
+nav a {
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px;
+    color: white;
+    padding: 10px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+/* .search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 2px;
+} */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  /* padding: ; */
+}
+
+
+.search-input {
+    border-radius: 7px;
+    padding: 4px;
+    border: none;
+
+}
+
+/* .body{
+    min-height: 100vh;
+} */
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -16,12 +59,13 @@ html {
     padding: 50px;
     border: 1px solid #ccc;
     border-radius: 20px;
+    margin-top: 30px;
   }
 
   .column1 {
     /* position: relative; */
     background-color: #f4f4f4;
-    padding: 70px;
+    padding: 30px 70px 70px 70px;
     border: 1px solid #ddd;
     border-radius: 20px;
     border-bottom-width: 13px;
@@ -38,7 +82,7 @@ html {
     height: 650px;
   }
 
-  nav {
+  /* nav {
     background-color: #2E81DF;
     padding: 2px 7px 0px 7px ;
     display: flex;
@@ -46,37 +90,8 @@ html {
     border-radius: 10px;
     margin-top: 20px;
     margin-bottom: 10px;
-}
+} */
 
-.search-container {
-    display: flex;
-    align-items: center;
-    /* flex-grow: 1; */
-    justify-content: center;
-    padding-bottom: 2px;
-}
-
-.search-input {
-    border-radius: 7px;
-    padding: 3px;
-    border: none;
-
-}
-
-
-
-nav a {
-    text-decoration: none;
-    font-size: 15px;
-    margin: 0 20px;
-    color: white;
-    padding-top: 20px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-    color: black;
-}
 
   .column2 p2{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -93,6 +108,17 @@ nav a:hover {
   }
 
   input[type="text"] {
+    display: block;
+    width: 80%; 
+    margin: 10px 0; 
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1); 
+
+  }
+
+  input[type="number"] {
     display: block;
     width: 80%; 
     margin: 10px 0; 

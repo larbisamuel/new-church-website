@@ -1,0 +1,185 @@
+
+html{
+  height: 100%;
+  margin: 0;
+  /* font-family: Arial, sans-serif; */
+  box-sizing: border-box;
+  /* font-size: 70.5%; */
+  scroll-behavior: smooth;
+
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 10px;
+}
+
+
+nav {
+  background-color: #2E81DF;
+  padding-left: 7px ;
+  padding-right: 9px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 20px;
+  color: white;
+  padding: 10px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+    border-radius: 7px;
+    padding: 4px;
+    border: none;
+
+}
+
+header {
+  text-align: center;
+  position: relative;
+  margin-top: 50px;
+  background-color: #f8f8f8;
+  padding: 20px;
+}
+.presby-logo{
+  display: flex;
+ align-items: center;
+  border-radius: 5px;
+  justify-content:space-around;
+  padding: 5px;
+
+}
+
+.presby-logo img{
+   height: 70px;
+  width: 70px;
+}
+
+.news-title h2{
+  color: rgb(141, 0, 0);
+  font-size: 26px;
+  font-family: "cinzel",'serif';
+  text-align: center;
+  font-weight: 100;
+}
+
+.container {
+    display: flex;
+    width: 100%;  
+    gap: 30px;    
+
+   
+}
+
+/* First Column - 20% */
+.side-column {
+    flex: 0 0 20%;  
+    /* background-color: #f4f4f4; */
+    padding: 15px;
+}
+
+/* Second Column - 50% */
+.main-content {
+    flex: 0 0 50%;  
+}
+
+.content-news-title h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    border-top: 1px solid rgb(237, 237, 237);
+    border-bottom: 1px solid rgb(237, 237, 237);
+    font-weight: 100;
+    padding: 5px;
+}
+
+.news-item {
+    margin-bottom: 30px;
+}
+
+.news-item img {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 10px;
+}
+
+.news-item p {
+    font-size: 16px;
+    color: #555;
+    text-align: justify;
+
+}
+
+/* Third Column - 30% */
+.recent-news {
+    flex: 0 0 30%;  
+    
+}
+
+.recent-news h2 {
+    margin-bottom: 20px;
+}
+
+.recent-news-item {
+    display: flex;
+    align-items: left;
+    /* margin-bottom: 20px; */
+}
+
+#recent-news-id {
+  display: flex;
+  flex-direction: column; 
+  gap: 20px;
+}
+
+.recent-news-item img {
+    width: 80px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+.recent-news-item p {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    nav{
+      flex-direction: column;
+      text-align: center;
+  
+    }
+  
+    .search-input {
+      width: 100%;
+      margin-top: 10px;
+      margin-bottom: 10px;
+  }
+
+    .side-column,
+    .main-content,
+    .recent-news {
+        flex: 1 1 100%;
+    }
+}
+

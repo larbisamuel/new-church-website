@@ -12,7 +12,7 @@ fetch('http://localhost:3000/api/upcoming-events/top3')
             // Set the inner HTML of the events item
             eventsItem.innerHTML = `
                 <div class="latest-flex1-image">
-                    <img src="http://localhost:3000${events.image_url}" alt="${events.title}">
+                <a href="news_details.html"><img src="http://localhost:3000${events.image_url}" alt="${events.title}"></a>
                     <div class="card-content">
                         <h1 class="card-header">${events.title}</h1>
                         <p class="card-text">${events.description}</p>

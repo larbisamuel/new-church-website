@@ -1,11 +1,16 @@
 
 html {
-    box-sizing: border-box;
-  }
+  height: 100%;
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+
+}
   
-  *, *:before, *:after {
+  /* *, *:before, *:after {
     box-sizing: inherit;
-  }
+  } */
 
 .container {
    
@@ -16,22 +21,29 @@ html {
   }
 
 
-
   nav a {
+    text-decoration: none;
+    font-size: 20px;
+    margin: 0 20px;
+    color: white;
+    padding: 10px;
+}
+
+  /* nav a {
     text-decoration: none;
     font-size: 17px;
     margin: 0 65px;
     color: white;
     padding: 10px;
     
-}
+} */
 
 nav a:hover {
     text-decoration: underline;
     color: black;
 }
 
-nav {
+/* nav {
     background-color: #2E81DF;
     padding:10px;
     display: flex;
@@ -39,13 +51,28 @@ nav {
     justify-content: space-between;
     border-radius: 10px;
     margin-top: 20px;
+} */
+
+nav {
+  background-color: #2E81DF;
+  padding-left: 7px ;
+  padding-right: 9px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 10px;
+  margin-top: 20px;
 }
 
-.search-container {
+/* .search-container {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+} */
+
+.search-container {
+  display: flex;
+  align-items: center;
 }
 
 .search-input {
@@ -102,6 +129,7 @@ nav {
 .back-to-top{
   float: right;
   margin-top: 10px;
+
 }
 
 .back-to-top p{

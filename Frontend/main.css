@@ -4,6 +4,8 @@ html {
     font-family: Arial, sans-serif;
     box-sizing: border-box;
     font-size: 70.5%;
+    scroll-behavior: smooth;
+
 }
 
 body {

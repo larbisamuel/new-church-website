@@ -12,7 +12,7 @@ fetch('http://localhost:3000/api/latest-news')
             // Set the inner HTML of the news item
             newsItem.innerHTML = `
                 <div class="lower-flex1-img"> <!-- Use existing CSS class -->
-                    <img src="http://localhost:3000${news.image_url}" alt="${news.title}">
+                <a href="home-upper-1.html"><img src="http://localhost:3000${news.image_url}" alt="${news.title}"></a>
                     <p>${news.description}</p> 
                 </div>
             `;
@@ -39,7 +39,7 @@ fetch('http://localhost:3000/api/upcoming-events')
             // Set the inner HTML of the events item
             eventsItem.innerHTML = `
                 <div class="lower-flex2-img"> <!-- Use existing CSS class -->
-                    <img src="http://localhost:3000${events.image_url}" alt="${events.title}">
+                <a href="home-upper-1.html"><img src="http://localhost:3000${events.image_url}" alt="${events.title}"></a>
                     <p>${events.description}</p> 
                 </div>
             `;

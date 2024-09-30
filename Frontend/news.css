@@ -1,7 +1,7 @@
 html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman', Times, serif;
   box-sizing: border-box;
 }
 
@@ -30,7 +30,7 @@ nav {
 
 nav a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 20px;
     margin: 0 20px;
     color: white;
     padding: 10px;

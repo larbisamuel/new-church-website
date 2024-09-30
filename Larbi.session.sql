@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS latest_news, upcoming_events, birthdays, weddings, next_week_service, church_activities, event_table, ministers, catechists, news, gallery CASCADE;
+DROP TABLE IF EXISTS latest_news, upcoming_events, birthdays, weddings, next_week_service, church_activities, event_table, ministers, catechists, news, news2, gallery, users CASCADE;
 
 CREATE TABLE latest_news (
     id SERIAL PRIMARY KEY,
@@ -83,6 +83,14 @@ CREATE TABLE news (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE news2 (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255),
+    description TEXT,
+    image_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE TABLE gallery (
     id SERIAL PRIMARY KEY,
     title VARCHAR(255) NOT NULL,
@@ -91,3 +99,12 @@ CREATE TABLE gallery (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE users (
+    ID SERIAL PRIMARY KEY,
+    staff_id INTEGER NOT NULL UNIQUE,
+    password TEXT NOT NULL,
+    email VARCHAR(255)
+);
+
+
+ INSERT INTO users (staff_id, password) VALUES (1234, 1234);

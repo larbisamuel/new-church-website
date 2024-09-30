@@ -12,7 +12,7 @@ fetch('http://localhost:3000/api/latest-news/top3')
             // Set the inner HTML of the news item
             newsItem.innerHTML = `
                 <div class="latest-flex1-image">
-                    <img src="http://localhost:3000${news.image_url}" alt="${news.title}">
+                    <a href="news_details.html"> <img src="http://localhost:3000${news.image_url}" alt="${news.title}"> </a>
                     <div class="card-content">
                         <h1 class="card-header">${news.title}</h1>
                         <p class="card-text">${news.description}</p>
@@ -28,3 +28,4 @@ fetch('http://localhost:3000/api/latest-news/top3')
     .catch(error => {
         console.error('Error fetching latest news:', error);
     });
+
