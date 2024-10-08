@@ -1,5 +1,5 @@
 
-DROP TABLE IF EXISTS latest_news, upcoming_events, birthdays, weddings, next_week_service, church_activities, event_table, ministers, catechists, news, news2, gallery, users CASCADE;
+DROP TABLE IF EXISTS latest_news, upcoming_events, birthdays, weddings, next_week_service, church_activities, event_table, ministers, catechists, news, news_images, u_news_images, gallery, users CASCADE;
 
 CREATE TABLE latest_news (
     id SERIAL PRIMARY KEY,
@@ -9,13 +9,6 @@ CREATE TABLE latest_news (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE upcoming_events (
-    id SERIAL PRIMARY KEY,
-    title VARCHAR(255) NOT NULL,
-    description TEXT NOT NULL,
-    image_url VARCHAR(255),
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
 
 CREATE TABLE birthdays (
     id SERIAL PRIMARY KEY,
@@ -83,11 +76,27 @@ CREATE TABLE news (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE news2 (
+CREATE TABLE news_images (
     id SERIAL PRIMARY KEY,
-    title VARCHAR(255),
-    description TEXT,
+    news_id INTEGER REFERENCES news(id) ON DELETE CASCADE,
     image_url VARCHAR(255),
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE upcoming_events (
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    image_url VARCHAR(255),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE u_news_images (
+    id SERIAL PRIMARY KEY,
+    u_news_id INTEGER REFERENCES upcoming_events(id) ON DELETE CASCADE,
+    image_url VARCHAR(255),
+    description TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
