@@ -8,6 +8,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-y: auto;
 }
 
 .modal-content {
@@ -17,11 +18,20 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     max-width: 500px;
     width: 100%;
+    max-height: 80vh; 
+    overflow-y: auto; 
 }
 
-.modal-input,
+.modal-input{
+   
+        width: 90%;
+        padding: 10px;
+        margin: 10px 0;
+        border-radius: 4px;
+   
+}
 .modal-textarea {
-    width: 100%;
+    width: 90%;
     padding: 10px;
     margin: 10px 0;
     border: 1px solid #ccc;
@@ -53,6 +63,20 @@
     border-radius: 5px;
 }
 
+.main-image-preview {
+    width: 280px;
+    height: 180px;
+    object-fit: cover; 
+    margin-bottom: 10px;
+}
+
+.additional-image-preview {
+    width: 100px; /* Adjust size */
+    height: 100px; /* Adjust size */
+    object-fit: cover; /* Maintain aspect ratio */
+    margin-right: 5px; /* Space between additional images */
+}
+
 .modal-actions {
     display: flex;
     justify-content: space-between;
@@ -64,6 +88,7 @@
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    margin-top: 10px;
 }
 
 .submit-button {

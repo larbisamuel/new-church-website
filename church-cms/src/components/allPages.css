@@ -98,3 +98,23 @@ button:focus {
     height: 100px;
     object-fit: cover;
 }
+
+.table-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.additional-images-section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.table-additional-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    margin-right: 5px;
+    margin-top: 5px;
+}
