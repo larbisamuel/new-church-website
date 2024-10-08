@@ -99,7 +99,7 @@ header {
     flex: 0 0 50%;  
 }
 
-.content-news-title h2 {
+#details-container h2 {
     margin-bottom: 20px;
     text-align: center;
     border-top: 1px solid rgb(237, 237, 237);
@@ -108,17 +108,17 @@ header {
     padding: 5px;
 }
 
-.news-item {
+#details-container{
     margin-bottom: 30px;
 }
 
-.news-item img {
+#details-container img {
     width: 100%;
-    height: 600px;
+    height: 650px;
     margin-bottom: 10px;
 }
 
-.news-item p {
+#details-container p {
     font-size: 16px;
     color: #555;
     text-align: justify;
