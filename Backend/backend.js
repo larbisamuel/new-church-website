@@ -4,7 +4,6 @@ const cors = require('cors');
 const pool = require('./db');
 const dotenv = require('dotenv');
 
-
 dotenv.config();
 
 const app = express();
@@ -13,6 +12,7 @@ const port = process.env.SERVER_PORT;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(express.json());
+
 
 
 

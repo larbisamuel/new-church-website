@@ -3,7 +3,8 @@ html {
     margin: 0;
     font-family: 'Times New Roman', Times, serif;
     box-sizing: border-box;
-    
+    scroll-behavior: smooth;
+
 }
 nav {
   background-color: #2E81DF;
@@ -28,17 +29,10 @@ nav a:hover {
     color: black;
 }
 
-/* .search-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 2px;
-} */
 
 .search-container {
   display: flex;
   align-items: center;
-  /* padding: ; */
 }
 
 
@@ -49,9 +43,7 @@ nav a:hover {
 
 }
 
-/* .body{
-    min-height: 100vh;
-} */
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr; 
@@ -82,16 +74,7 @@ nav a:hover {
     height: 650px;
   }
 
-  /* nav {
-    background-color: #2E81DF;
-    padding: 2px 7px 0px 7px ;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-} */
-
+ 
 
   .column2 p2{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -107,7 +90,7 @@ nav a:hover {
 
   }
 
-  input[type="text"] {
+  .name-email {
     display: block;
     width: 80%; 
     margin: 10px 0; 
@@ -129,12 +112,7 @@ nav a:hover {
 
   }
 
-  input[class="message"]{
-    width: 80%;
-    height: 70px;
-    padding-bottom: 20px;
-  }
-  
+
   .message{
     box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.1); 
     border: none;
@@ -283,7 +261,11 @@ footer {
 
 
 @media (max-width: 855px){
-  
+  .search-input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
   .in-touch{
     margin-left: 50px;
@@ -309,12 +291,13 @@ footer {
   nav {
       flex-direction: column; 
       text-align: center;
-      /* align-items: flex-start; */
       
   }
 
   nav a {
-      margin: 10px 0; 
+      margin: 5px 0;
+       font-size: 14px;
+   
   }
 
   .search-container {
@@ -322,13 +305,14 @@ footer {
   }
 
   .search-input{
-    width: 90%;
-
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
-  input[type="text"] {
+  .name-email {
     display: block;
-    width: 63%; 
+    width: 80%; 
     margin: 10px 0; 
     padding: 10px;
     border: 1px solid #ccc;
@@ -358,6 +342,11 @@ footer {
   /* .follow-us h3{
     margin-top: 10px;
   } */
+  .search-input{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
   .social-icons{
 
   }
@@ -386,6 +375,17 @@ footer {
   .nav{
     width: 327px;
   }
+
+  .search-container {
+    margin-top: 10px; 
+}
+
+.search-input{
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
   .column1, .column2 {
       padding: 10px;
       width: 310px;
@@ -405,9 +405,9 @@ footer {
   }
  
 
-  input[type="text"] {
+  .name-email {
     display: block;
-    width: 63%; 
+    width: 80%; 
     margin: 10px 0; 
     padding: 10px;
     border: 1px solid #ccc;

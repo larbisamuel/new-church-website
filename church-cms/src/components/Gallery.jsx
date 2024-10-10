@@ -1,4 +1,3 @@
-// src/pages/Gallery.js
 import React, { useState, useEffect } from 'react';
 import Modal from '../components/Modal';
 import "./allPages.css";

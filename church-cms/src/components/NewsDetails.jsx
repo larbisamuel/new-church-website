@@ -11,7 +11,7 @@ const NewsDetails = () => {
     const [errorNewsDetails, setErrorNewsDetails] = useState(null);
     const [modalOpenNewsDetails, setModalOpenNewsDetails] = useState(false);
     const [currentEditNewsDetails, setCurrentEditNewsDetails] = useState(null);
-    const [defaultTitle, setDefaultTitle] = useState(''); // New state to hold the default title
+    // const [defaultTitle, setDefaultTitle] = useState(''); // New state to hold the default title
 
     
     const [newsDetails2, setnewsDetails2] = useState([]);
@@ -19,7 +19,7 @@ const NewsDetails = () => {
     const [errornewsDetails2, setErrornewsDetails2] = useState(null);
     const [modalOpennewsDetails2, setModalOpennewsDetails2] = useState(false);
     const [currentEditnewsDetails2, setCurrentEditnewsDetails2] = useState(null);
-    const [defaultTitle2, setdefaultTitle2] = useState('');
+    // const [defaultTitle2, setdefaultTitle2] = useState('');
 
 
      // Fetch newsDetails
@@ -58,13 +58,6 @@ const NewsDetails = () => {
 
    //handlers for news details-1
     const handleAddNewsDetails = () => {
-        // Set the title of the first news item as the default title when adding a new item
-        if (newsDetails.length > 0) {
-            setDefaultTitle(newsDetails[0].title); // Copy the first news title
-        } else {
-            setDefaultTitle(''); // No title if no news is available
-        }
-
         setCurrentEditNewsDetails(null);
         setModalOpenNewsDetails(true);
     };
@@ -111,13 +104,11 @@ const NewsDetails = () => {
                 setNewsDetails(newsDetails.map(item => item.id === currentEditNewsDetails.id ? response.data : item));
             } else {
                 // Create new news item
-                await Axios.post('http://localhost:3000/api/news/upload-news', formData);
-                console.log("news additional items:",formData);
+                const response = await Axios.post('http://localhost:3000/api/news/upload-news', formData);
+                setNewsDetails([...newsDetails, response.data]);
             }
     
-            // Refetch the updated list of news after successful submission
-            const updatedResponse = await Axios.get(`http://localhost:3000/api/news/${id}`);
-            setNewsDetails(updatedResponse.data);
+           
             
         } catch (error) {
             console.error('Error submitting news item:', error);
@@ -129,13 +120,7 @@ const NewsDetails = () => {
     
       //handlers for news details-2
       const handleAddnewsDetails2 = () => {
-        // Set the title of the first news item as the default title when adding a new item
-        if (newsDetails2.length > 0) {
-            setdefaultTitle2(newsDetails2[0].title); // Copy the first news title
-        } else {
-            setdefaultTitle2(''); // No title if no news is available
-        }
-
+       
         setCurrentEditnewsDetails2(null);
         setModalOpennewsDetails2(true);
     };
@@ -183,13 +168,14 @@ const NewsDetails = () => {
             } else {
                 // Create new news item
                 const uploadResponse = await Axios.post('http://localhost:3000/api/upcoming-events/upload-u-news', formData);
+                setnewsDetails2([...newsDetails2, uploadResponse.data]);
                 console.log("event additional img:", uploadResponse);
             }
             
     
             // Refetch the updated list of news after successful submission
-            const updatedResponse = await Axios.get(`http://localhost:3000/api/upcoming-events/${id}`);
-            setnewsDetails2(updatedResponse.data);
+            // const updatedResponse = await Axios.get(`http://localhost:3000/api/upcoming-events/${id}`);
+            // setnewsDetails2(updatedResponse.data);
             
         } catch (error) {
             console.error('Error submitting event item:', error);
@@ -302,7 +288,7 @@ const NewsDetails = () => {
                 onSubmit={handleSubmitNewsDetails}
                 title={currentEditNewsDetails ? "Edit Item" : "Add New Item"}
                 currentData={currentEditNewsDetails}
-                defaultTitle={defaultTitle}
+                // defaultTitle={defaultTitle}
             />
 
             <Modal_News
@@ -311,7 +297,7 @@ const NewsDetails = () => {
                 onSubmit={handleSubmitnewsDetails2}
                 title={currentEditnewsDetails2 ? "Edit Item" : "Add New Item"}
                 currentData={currentEditnewsDetails2}
-                defaultTitle={defaultTitle2}
+                // defaultTitle={defaultTitle2}
             />
             
 

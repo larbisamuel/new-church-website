@@ -5,9 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact us</title>
+   <link rel="stylesheet" href="contactUs.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
-  <link rel="stylesheet" href="contactUs.css">
-  <link rel="homePage" href="homePage.html">
+ 
 
 </head>
 <body>
@@ -19,18 +19,20 @@
     <a href="ministries.html">Ministries</a>
     <a href="contactUs.html">Contact Us</a>
     <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input" style=" padding: 4px;">
+        <input type="text" placeholder="Search..." class="search-input" >
     </div>
 </nav>
   <div class="container">
     <div class="column1">
         <h3 class="message-title">Send us a message</h3> <br>
-        <input type="text" placeholder="full name">  
-        <input type="text" placeholder="email">
-        <input type="number" placeholder="contact">   
+      <form action="https://formspree.io/f/xwpkeyld" method="POST">
+        <input name="Name" type="text" placeholder="full name" class="name-email" required>  
+        <input name="Email" type="text" placeholder="email" class="name-email" required>
+        <input name="contact" type="number" placeholder="contact" required>   
    
-        <textarea class="message" placeholder="Enter your message"></textarea>
-        <div> <button>Send message</button></div>
+        <textarea name="Message" class="message" placeholder="Enter your message" required></textarea>
+        <div> <button  onclick="" id="sendButton">Send message</button></div>
+      </form>
       
         <div class="Qr-code">
             <p>Scan for directions</p>

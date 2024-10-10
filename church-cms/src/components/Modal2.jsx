@@ -42,13 +42,13 @@ const Modal2 = ({ show, onClose, onSubmit, title, currentData }) => {
                 <label>Preacher Title:</label>
                 <input name="preacher_title" value={formData.preacher_title} onChange={handleChange} className="modal-input" />
                 
-                <label>1st Bible Reading:</label>
+                <label> Bible Reading (1st):</label>
                 <input name="bible_reading_1" value={formData.bible_reading_1} onChange={handleChange} className="modal-input" />
                 
-                <label>2nd Bible Reading:</label>
+                <label> Bible Reading (2nd):</label>
                 <input name="bible_reading_2" value={formData.bible_reading_2} onChange={handleChange}className="modal-input" />
                 
-                <label>3rd Bible Reading:</label>
+                <label> Bible Reading (3rd):</label>
                 <input name="bible_reading_3" value={formData.bible_reading_3} onChange={handleChange} className="modal-input" />
                 
                 <label>Suggested Hymns:</label>
