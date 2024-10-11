@@ -127,11 +127,29 @@ const NewsDetails = () => {
 
   
 
+    // const handleEditnewsDetails2 = (item) => {
+    //     setCurrentEditnewsDetails2(item);
+    //     setModalOpennewsDetails2(true);
+    // };
     const handleEditnewsDetails2 = (item) => {
+        // Set the current item being edited to the state
         setCurrentEditnewsDetails2(item);
+    
+        // Set the modal to open for editing
         setModalOpennewsDetails2(true);
+    
+        // Set the title and main description based on the item being edited
+        setTitle(item.title);
+        setMainDescription(item.description);
+    
+        // For the main image, we assume it has a URL in item.mainImageUrl
+        setMainImage(item.mainImageUrl);
+    
+        // For additional images and descriptions, we assume they are arrays
+        setAdditionalImages(item.additionalImagesUrls || []);  // Set additional images URLs
+        setAdditionalDescriptions(item.additionalDescriptions || []);  // Set additional image descriptions
     };
-
+    
 
    
 
@@ -151,7 +169,6 @@ const NewsDetails = () => {
         const formData = new FormData();
         formData.append('title', newData.title);
         formData.append('description', newData.description);
-        
         if (newData.image) formData.append('image', newData.image);
     
         // Append additional images and descriptions

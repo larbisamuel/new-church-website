@@ -7,7 +7,7 @@ fetch('http://localhost:3000/api/weddings')
         data.forEach(wedding => {
             // Create a div element to hold each wedding item
             const weddingItem = document.createElement('div');
-            weddingItem.classList.add('grid-item1');
+            weddingItem.classList.add('latest-flex1-grid1');
 
             // Set the inner HTML of the birthday item
             weddingItem.innerHTML = `

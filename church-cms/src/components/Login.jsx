@@ -22,20 +22,29 @@ function Copyright(props) {
     </Typography>
     );
 }
-const btnStyle={margin: '10px 0 10px'}
+const btnStyle={margin: '55px 0 10px'}
 const paperStyle = { padding: 60, height: '85vh', width: 550, margin: "40px auto", borderRadius: "15px"  }
 const avatarStyle = { width: '100px', height: '100px' }
 const imageStyle = { width: '100%', height: '90%', objectFit: 'cover' }
+const inputStyle = {margin: '20px 0 0 0'}
 
 const Login = () => {
     const navigate = useNavigate();
 
     const [staff_id, setStaffId] = useState('');
+    const [password, setPassword] = useState ('');
   const [showStaffId, setShowStaffId] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+
     
     
   const handleStaffIdChange = (e) => {
     setStaffId(e.target.value);
+  };
+
+    
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
   };
 
 
@@ -57,7 +66,7 @@ const Login = () => {
         try {
           // Make a POST request to the login endpoint
           const body = { staff_id };
-          const response = await axios.post('http://localhost:3000/api/login', body);
+          const response = await axios.post('http://localhost:3000/api/login/login', body);
       
           // Store the JWT token in localstorage
           const accessToken = response.data.accessToken;
@@ -89,6 +98,64 @@ const Login = () => {
           }
         }
       };
+
+    // const handleSignIn = async (e) => {
+    //   e.preventDefault(); // Prevent default form submission
+    
+    //   // Validate staff_id input
+    //   if (!staff_id.trim()) {
+    //     alert("Please enter a staff ID.");
+    //     return;
+    //   }
+    
+    //   if (!/^\d+$/.test(staff_id)) {
+    //     alert("Staff ID must be a numeric value.");
+    //     return;
+    //   }
+    
+    //   // Ensure password is provided
+    //   if (!password.trim()) {
+    //     alert("Please enter your password.");
+    //     return;
+    //   }
+    
+    //   try {
+    //     // Make a POST request to the login endpoint with both staff_id and password
+    //     const body = { staff_id, password };
+    //     const response = await axios.post('http://localhost:3000/api/login/login', body);
+    
+    //     // Store the JWT token in localStorage
+    //     const accessToken = response.data.accessToken;
+    //     localStorage.setItem('authToken', accessToken);
+    
+    //     // Retrieve the JWT token from localStorage
+    //     const authToken = localStorage.getItem('authToken');
+    
+    //     // Send a GET request to check authentication
+    //     const authenticationResponse = await axios.get('http://localhost:3000/api/login/check-auth', {
+    //       headers: {
+    //         Authorization: `Bearer ${authToken}`,
+    //       },
+    //     });
+    
+    //     // If authentication is successful, navigate to the dashboard
+    //     if (authenticationResponse.status === 200) {
+    //       navigate('/');
+    //       alert('Login success!');
+    //     } else {
+    //       alert('Authentication failed. Please try again.');
+    //     }
+    //   } catch (error) {
+    //     console.error('An error occurred during login:', error);
+    
+    //     if (error.response && error.response.status === 404) {
+    //       alert('Incorrect staff ID. Please try again!');
+    //     } else if (error.response && error.response.status === 401) {
+    //       alert('Invalid password. Please try again!');
+    //     }
+    //   }
+    // };
+    
       
 
     return (
@@ -97,7 +164,7 @@ const Login = () => {
         <Grid >
             <Paper elevation={10} style={paperStyle} >
                 <Grid align="center">
-                    <Typography variant='h4'>Welcome To The Church Database</Typography><br></br>
+                    <Typography variant='h4'>Welcome To The Church Content Management System</Typography><br></br>
                         <Avatar style={avatarStyle} >
                             <img src={presby} alt="Profile" style={imageStyle} />
                         </Avatar>
@@ -127,6 +194,31 @@ const Login = () => {
                         }}
                         autoFocus
                 />
+
+                    {/* <TextField
+                        label="Password"
+                        name="password"
+                        placeholder="Enter password"
+                        value={password}
+                        onChange={handlePasswordChange}
+                        fullWidth
+                        type={showPassword ? 'text' : 'password' }
+                        InputProps={{
+                          endAdornment: (
+                            <InputAdornment position="end" >
+                              {showPassword ? (
+                                <VisibilityOff className="pointerCursor" onClick={() => setShowPassword(false)} />
+                              ) : (
+                                <Visibility className="pointerCursor" onClick={() => setShowPassword(true)} />
+                              )}
+                            </InputAdornment>
+                           
+                          ),
+                          
+                        }}
+                        style={inputStyle}
+                        required
+                      /> */}
 
             
                 <Button type="submit" color="primary" variant="contained" style={btnStyle} fullWidth onClick={handleSignIn}>Sign In</Button>

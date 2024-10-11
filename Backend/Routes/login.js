@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const pool = require('../db');
-
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
 const {authenticateToken} = require ('../authorization.js')
 const  REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET
 const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET
 
-// Create a new user
+// // Create a new user
 router.post('/register', async (req, res) => {
     try {
       const { staffid, password, email } = req.body;
@@ -25,13 +26,73 @@ router.post('/register', async (req, res) => {
     }
   });
   
+// router.post('/register', async (req, res) => {
+//   try {
+//     const { staff_id, password, email } = req.body;
+
+//     // Generate a salt and hash the password
+//     const hashedPassword = await bcrypt.hash(password, 10); // '10' is the salt rounds
+//     console.log("hashedPassword:", hashedPassword);
+
+//     // Insert the new user into the database with the hashed password
+//     const newUser = await pool.query(
+//       'INSERT INTO users (staff_id, password, email) VALUES ($1, $2, $3) RETURNING *', 
+//       [staff_id, hashedPassword, email]
+//     );
+
+//     res.json(newUser.rows[0]);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: 'An error occurred while registering a user' });
+//   }
+// });
   
   
-  router.get('/check-auth', authenticateToken, (req, res) => {
+router.get('/check-auth', authenticateToken, (req, res) => {
   res.status(200).json({ message: 'Authenticated' });
   });
   
   
+// router.post('/login', async (req, res) => {
+//   try {
+//     const { staff_id, password } = req.body;
+
+//     // Find the user in the database based on the staff ID.
+//     const user = await pool.query('SELECT * FROM users WHERE staff_id = $1', [staff_id]);
+
+//     // If user is not found, return an error.
+//     if (user.rows.length === 0) {
+//       return res.status(404).json({ error: 'User not found' });
+//     }
+
+//     // Compare the provided password with the hashed password in the database
+//     const validPassword = await bcrypt.compare(password, user.rows[0].password);
+
+//     if (!validPassword) {
+//       return res.status(401).json({ error: 'Invalid password' });
+//     }
+
+//     // Generate a JWT token for the user.
+//     const accessToken = jwt.sign(
+//       { userId: user.rows[0].id, staff_id: user.rows[0].staff_id },
+//       ACCESS_TOKEN_SECRET,
+//       { expiresIn: '1h' }
+//     );
+
+//     // Generate a refresh token
+//     const refreshToken = jwt.sign(
+//       { userId: user.rows[0].id },
+//       REFRESH_TOKEN_SECRET,
+//       { expiresIn: '2m' }
+//     );
+
+//     res.cookie('refresh_token', refreshToken, { httpOnly: true });
+//     res.json({ accessToken, refreshToken });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(401).json({ error: 'An error occurred while logging in' });
+//   }
+// });
   
   router.post('/login', async (req, res) => {
   try {

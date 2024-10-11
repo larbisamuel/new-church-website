@@ -111,7 +111,7 @@ router.put('/:id', upload, async (req, res) => {
         const mainImage = images['image'][0];
         const mainImageUrl = `/uploads/${mainImage.filename}`;
 
-        // Example: Update the database with the main image and additional images
+        //  Update the database with the main image and additional images
         await pool.query(
             'UPDATE upcoming_events SET title = $1, description = $2, image_url = $3 WHERE id = $4',
             [title, description, mainImageUrl, req.params.id]

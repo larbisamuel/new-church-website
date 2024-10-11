@@ -9,19 +9,7 @@ import Axios from 'axios';
 import './allPages.css';
 
 const Home = () => {
-    // State for Latest News
-    // const [latestNews, setLatestNews] = useState([]);
-    // const [loadingNews, setLoadingNews] = useState(true);
-    // const [errorNews, setErrorNews] = useState(null);
-    // const [modalOpenNews, setModalOpenNews] = useState(false);
-    // const [currentEditNews, setCurrentEditNews] = useState(null);
     
-    // State for Upcoming Events
-    // const [upcomingEvents, setUpcomingEvents] = useState([]);
-    // const [loadingEvents, setLoadingEvents] = useState(true);
-    // const [errorEvents, setErrorEvents] = useState(null);
-    // const [modalOpenEvents, setModalOpenEvents] = useState(false);
-    // const [currentEditEvents, setCurrentEditEvents] = useState(null);
 
 
     //State for birthdays
@@ -60,35 +48,7 @@ const Home = () => {
      const [currentEditMonthlyActivity, setCurrentEditMonthlyActivity] = useState(null);
  
 
-    // Fetch Latest News
-    // useEffect(() => {
-    //     const fetchLatestNews = async () => {
-    //         try {
-    //             const response = await Axios.get('http://localhost:3000/api/latest-news');
-    //             setLatestNews(response.data);
-    //             setLoadingNews(false);
-    //         } catch (error) {
-    //             setErrorNews('Failed to fetch latest news.');
-    //             setLoadingNews(false);
-    //         }
-    //     };
-    //     fetchLatestNews();
-    // }, []);
-
-    // Fetch Upcoming Events
-    // useEffect(() => {
-    //     const fetchUpcomingEvents = async () => {
-    //         try {
-    //             const response = await Axios.get('http://localhost:3000/api/upcoming-events');
-    //             setUpcomingEvents(response.data);
-    //             setLoadingEvents(false);
-    //         } catch (error) {
-    //             setErrorEvents('Failed to fetch upcoming events.');
-    //             setLoadingEvents(false);
-    //         }
-    //     };
-    //     fetchUpcomingEvents();
-    // }, []);
+  
 
     // Fetch birthdays
     useEffect(() => {
@@ -164,97 +124,6 @@ const Home = () => {
     }, []);
 
 
-    // Handlers for Latest News
-    // const handleAddNewNews = () => {
-    //     setCurrentEditNews(null);
-    //     setModalOpenNews(true);
-    // };
-
-    // const handleEditNews = (item) => {
-    //     setCurrentEditNews(item);
-    //     setModalOpenNews(true);
-    // };
-
-    // const handleDeleteNews = async (id) => {
-    //     const confirmed = window.confirm('Are you sure you want to delete this news item?');
-    //     if (confirmed) {
-    //         try {
-    //             await Axios.delete(`http://localhost:3000/api/latest-news/${id}`);
-    //             setLatestNews(latestNews.filter(item => item.id !== id));
-    //         } catch (error) {
-    //             console.error('Error deleting news item:', error);
-    //         }
-    //     }
-    // };
-
-    // const handleSubmitNews = async (newData) => {
-    //     const formData = new FormData();
-    //     formData.append('title', newData.title);
-    //     formData.append('description', newData.description);
-    //     if (newData.image) formData.append('image', newData.image);
-
-    //     try {
-    //         if (currentEditNews) {
-    //             // Update News
-    //             const response = await Axios.put(`http://localhost:3000/api/latest-news/${currentEditNews.id}`, formData);
-    //             setLatestNews(latestNews.map(item => item.id === currentEditNews.id ? response.data : item));
-    //         } else {
-    //             // Create News
-    //             const response = await Axios.post('http://localhost:3000/api/latest-news', formData);
-    //             setLatestNews([...latestNews, response.data]);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error submitting news item:', error);
-    //     }
-    //     setModalOpenNews(false);
-    // };
-
-    // Handlers for Upcoming Events
-    // const handleAddNewEvent = () => {
-    //     setCurrentEditEvents(null);
-    //     setModalOpenEvents(true);
-    // };
-
-    // const handleEditEvent = (item) => {
-    //     setCurrentEditEvents(item);
-    //     setModalOpenEvents(true);
-    // };
-
-    // const handleDeleteEvent = async (id) => {
-    //     const confirmed = window.confirm('Are you sure you want to delete this event?');
-    //     if (confirmed) {
-    //         try {
-    //             await Axios.delete(`http://localhost:3000/api/upcoming-events/${id}`);
-    //             setUpcomingEvents(upcomingEvents.filter(item => item.id !== id));
-    //         } catch (error) {
-    //             console.error('Error deleting event:', error);
-    //         }
-    //     }
-    // };
-
-    // const handleSubmitEvent = async (newData) => {
-    //     console.log("Submitting new event data:", newData);
-
-    //     const formData = new FormData();
-    //     formData.append('title', newData.title);
-    //     formData.append('description', newData.description);
-    //     if (newData.image) formData.append('image', newData.image);
-
-    //     try {
-    //         if (currentEditEvents) {
-    //             // Update Event
-    //             const response = await Axios.put(`http://localhost:3000/api/upcoming-events/${currentEditEvents.id}`, formData);
-    //             setUpcomingEvents(upcomingEvents.map(item => item.id === currentEditEvents.id ? response.data : item));
-    //         } else {
-    //             // Create Event
-    //             const response = await Axios.post('http://localhost:3000/api/upcoming-events', formData);
-    //             setUpcomingEvents([...upcomingEvents, response.data]);
-    //         }
-    //     } catch (error) {
-    //         console.error('Error submitting event:', error);
-    //     }
-    //     setModalOpenEvents(false);
-    // };
 
       // Handlers for birthdays
       const handleAddBirthday = () => {
@@ -272,7 +141,7 @@ const Home = () => {
         if (confirmed) {
             try {
                 await Axios.delete(`http://localhost:3000/api/birthdays/${id}`);
-                setBirthday(upcomingEvents.filter(item => item.id !== id));
+                setBirthday(birthday.filter(item => item.id !== id));
             } catch (error) {
                 console.error('Error deleting event:', error);
             }
@@ -280,8 +149,6 @@ const Home = () => {
     };
 
     const handleSubmitBirthday = async (newData) => {
-        console.log("Submitting new birthday data:", newData);
-
         const formData = new FormData();
         formData.append('title', newData.title);
         formData.append('description', newData.description);
@@ -509,59 +376,7 @@ const Home = () => {
 
     return (
         <div className="home-page">
-            {/* Latest News Section */}
-            {/* <h1>Latest News</h1>
-            <button className="add-button" onClick={handleAddNewNews}>Add New News</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {latestNews.map(item => (
-                        <tr key={item.id}>
-                            <td><img src={`http://localhost:3000${item.image_url}`} alt="Thumbnail" className='table-image' /></td>
-                            <td>{item.title}</td>
-                            <td>{item.description}</td>
-                            <td>
-                                <button onClick={() => handleEditNews(item)}>Edit</button>
-                                <button onClick={() => handleDeleteNews(item.id)}>Delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table> */}
-
-            {/* Upcoming Events Section */}
-            {/* <h1>Upcoming Events</h1>
-            <button className="add-button" onClick={handleAddNewEvent}>Add New Event</button>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Image</th>
-                        <th>Title</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {upcomingEvents.map(item => (
-                        <tr key={item.id}>
-                            <td><img src={`http://localhost:3000${item.image_url}`} alt="Thumbnail" className='table-image' /></td>
-                            <td>{item.title}</td>
-                            <td>{item.description}</td>
-                            <td>
-                                <button onClick={() => handleEditEvent(item)}>Edit</button>
-                                <button onClick={() => handleDeleteEvent(item.id)}>Delete</button>
-                            </td>
-                        </tr>
-                    ))}
-                </tbody>
-            </table> */}
+           
 
             <h1>Birthday</h1>
             <button className="add-button" onClick={handleAddBirthday}>Add New Event</button>
@@ -697,21 +512,7 @@ const Home = () => {
                 </tbody>
             </table>
 
-            {/* Modals for both News and Events */}
-            {/* <Modal
-                show={modalOpenNews}
-                onClose={() => setModalOpenNews(false)}
-                onSubmit={handleSubmitNews}
-                title={currentEditNews ? "Edit News" : "Add New News"}
-                currentData={currentEditNews}
-            /> */}
-            {/* <Modal
-                show={modalOpenEvents}
-                onClose={() => setModalOpenEvents(false)}
-                onSubmit={handleSubmitEvent}
-                title={currentEditEvents ? "Edit Event" : "Add New Event"}
-                currentData={currentEditEvents}
-            /> */}
+         
             <Modal
                 show={modalOpenBirthday}
                 onClose={() => setModalOpenBirthday(false)}

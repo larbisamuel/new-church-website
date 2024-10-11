@@ -7,7 +7,7 @@ fetch('http://localhost:3000/api/birthdays')
         data.forEach(birthday => {
             // Create a div element to hold each birthday item
             const birthdayItem = document.createElement('div');
-            birthdayItem.classList.add('grid-item1');
+            birthdayItem.classList.add('latest-flex1-grid1');
 
             // Set the inner HTML of the birthday item
             birthdayItem.innerHTML = `

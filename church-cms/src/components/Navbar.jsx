@@ -3,33 +3,37 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import "./allPages.css"
 import Axios from 'axios';
+import LogoutIcon from '@material-ui/icons/ExitToApp';
+import { useNavigate } from "react-router-dom";
+
+import { Typography } from '@material-ui/core';
 
 
 const Navbar = () => {
 
-    // const handlePublish = async () => {
-    //     try {
-    //         const response = await Axios.post('http://localhost:3000/api/publish');
-    //         if (response.status === 200) {
-    //             alert('Website content published successfully');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error publishing content:', error);
-    //         alert('Failed to publish content');
-    //     }
-    // };
+    const navigate = useNavigate();
+    const handleLogout = () => {
+        navigate('/login');
+        alert("You are logged out!")
+        // Clear the token from localStorage
+      localStorage.removeItem('authToken');
+      }
+
+      const logoutStyle = {
+        color: 'red',
+        cursor: 'pointer',
+      }
+  
+   
 
     return (
         <nav className="navbar">
             <ul className="navbar-list">
                 <li><Link to="/">Home</Link></li>
-                {/* <li><Link to="/about-us">About Us</Link></li> */}
                 <li><Link to="/news-details">Detail News</Link></li>
                 <li><Link to="/gallery">Gallery</Link></li>
-                {/* <li><Link to="/ministries">Ministries</Link></li> */}
-                {/* <li><Link to="/contact-us">Contact Us</Link></li> */}
-                <button>Publish</button>
-            </ul>
+                <LogoutIcon  onClick={ handleLogout} style={logoutStyle} />           
+               </ul>
         </nav>
     );
 };

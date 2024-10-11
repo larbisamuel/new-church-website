@@ -35,15 +35,15 @@ const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
         }
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit =  (e) => {
         e.preventDefault();  // Prevent the default form submission
     
-        const formData = new FormData();
-        formData.append('title', titleInput);
-        formData.append('description', descriptionInput);
-        if (imageFile) {
-            formData.append('image', imageFile);  // Send the actual file object
-        }
+        // const formData = new FormData();
+        // formData.append('title', titleInput);
+        // formData.append('description', descriptionInput);
+        // if (imageFile) {
+        //     formData.append('image', imageFile);  // Send the actual file object
+        // }
     
         // Submit the form data to the parent component
         onSubmit({ title: titleInput, description: descriptionInput, image: imageFile });
@@ -64,7 +64,7 @@ const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
         <div className="modal">
             <div className="modal-content">
                 <h2>{title}</h2>
-                <form onSubmit={handleSubmit}>
+                
                     <input
                         type="text"
                         placeholder="Title"
@@ -93,14 +93,16 @@ const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
                         )}
                     </div>
                     <div className="modal-actions">
-                        <button type="submit" className="submit-button">
+                    <button onClick={handleSubmit} className="submit-button">Submit</button>
+                        <button onClick={onClose} className="close-button">Close</button>
+                        {/* <button className="submit-button" onSubmit={handleSubmit}>
                             Submit
                         </button>
                         <button type="button" className="close-button" onClick={onClose}>
                             Close
-                        </button>
+                        </button> */}
                     </div>
-                </form>
+                
             </div>
         </div>
     );

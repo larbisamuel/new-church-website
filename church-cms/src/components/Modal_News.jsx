@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './modal.css';
 
 const Modal_News = ({ show, onClose, onSubmit, currentData }) => {
@@ -7,6 +7,21 @@ const Modal_News = ({ show, onClose, onSubmit, currentData }) => {
     const [mainImage, setMainImage] = useState(null);
     const [additionalImages, setAdditionalImages] = useState([]);
     const [additionalDescriptions, setAdditionalDescriptions] = useState([]);
+
+
+
+    useEffect(() => {
+        if (currentData) {
+            setTitle(currentData.title || '');
+            setMainDescription(currentData.description || '');
+            setMainImage(null); // Clear the image preview to avoid displaying old image when editing
+            setAdditionalImages(currentData.additionalImages || []);
+            setAdditionalDescriptions(currentData.additionalDescriptions || []);
+            // setImagePreview(currentData.image || '');
+        }else {
+            resetForm();  // Reset the form if no currentData (i.e., it's a new item)
+        }
+    }, [currentData]);
 
     const handleMainImageChange = (e) => {
         setMainImage(e.target.files[0]);
@@ -42,7 +57,6 @@ const Modal_News = ({ show, onClose, onSubmit, currentData }) => {
         };
     
         onSubmit(formData); // Pass the form data to the parent component
-        console.log("form data:", formData)
 
         resetForm();
         onClose();

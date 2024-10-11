@@ -1,6 +1,9 @@
 const jwt = require('jsonwebtoken');
-const ACCESS_TOKEN_SECRET = '123HGFDDFF87653WREFDVKJHGSDF987653WRE';
-const REFRESH_TOKEN_SECRET = 'dsfdghg98764354jkhgfdsfghyygygt567kjhbvdfg';
+// const ACCESS_TOKEN_SECRET = '123HGFDDFF87653WREFDVKJHGSDF987653WRE';
+// const REFRESH_TOKEN_SECRET = 'dsfdghg98764354jkhgfdsfghyygygt567kjhbvdfg';
+
+const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET;
+const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET;
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers['authorization'];
