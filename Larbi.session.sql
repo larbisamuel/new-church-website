@@ -110,10 +110,11 @@ CREATE TABLE gallery (
 
 CREATE TABLE users (
     ID SERIAL PRIMARY KEY,
-    staff_id INTEGER NOT NULL UNIQUE,
+    staff_id VARCHAR NOT NULL,
     password TEXT NOT NULL,
     email VARCHAR(255)
 );
 
+INSERT INTO users (staff_id, password) VALUES ('Presby@200', '1234');
 
- INSERT INTO users (staff_id, password) VALUES (1234, 1234);
+--  INSERT INTO users (staff_id, password) VALUES ('Presby@200', 1234);

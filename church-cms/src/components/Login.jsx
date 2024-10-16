@@ -58,10 +58,10 @@ const Login = () => {
           return;
         }
       
-        if (!/^\d+$/.test(staff_id)) {
-          alert("Staff ID must be a numeric value.");
-          return;
-        }
+        // if (!/^\d+$/.test(staff_id)) {
+        //   alert("Staff ID must be a numeric value.");
+        //   return;
+        // }
       
         try {
           // Make a POST request to the login endpoint

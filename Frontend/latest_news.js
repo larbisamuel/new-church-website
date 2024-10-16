@@ -1,5 +1,8 @@
-// Fetch the latest 3 news items from the backend API
-// fetch('http://localhost:3000/api/latest-news/top3')
+
+function getFirstSevenWords(text) {
+    return text.split(' ').slice(0, 5).join(' ') + '...';
+}
+
 fetch('http://localhost:3000/api/news/top3-l')
     .then(response => response.json())
     .then(data => {
@@ -13,13 +16,14 @@ fetch('http://localhost:3000/api/news/top3-l')
             // Set the inner HTML of the news item
             newsItem.innerHTML = `
                 <div class="latest-flex1-image">
-                    <a href="news_details.html?id=${news.id}&type=news"> <img src="http://localhost:3000${news.image_url}" alt="${news.title}"> </a>
+                    <a href="news_details.html?id=${news.id}&type=news"> 
+                        <img src="http://localhost:3000${news.image_url}" alt="${news.title}"> 
+                    </a>
                     <div class="card-content">
                         <h1 class="card-header">${news.title}</h1>
-                        <p class="card-text">${news.description}</p>
+                        <p class="card-text">${getFirstSevenWords(news.description)}</p>
                     </div>
                 </div>
-                
             `;
 
             // Append the news item to the container
@@ -29,4 +33,3 @@ fetch('http://localhost:3000/api/news/top3-l')
     .catch(error => {
         console.error('Error fetching latest news:', error);
     });
-

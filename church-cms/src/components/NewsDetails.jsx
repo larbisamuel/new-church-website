@@ -82,6 +82,8 @@ const NewsDetails = () => {
                 console.error('Error deleting newsDetails item:', error);
             }
         }    
+        alert("Item sucessfully deleted!");
+
     };
 
     const handleSubmitNewsDetails = async (newData) => {
@@ -114,6 +116,8 @@ const NewsDetails = () => {
             console.error('Error submitting news item:', error);
         }
         setModalOpenNewsDetails(false);
+        alert("Image sucessfully uploaded!");
+
     };
     
   
@@ -127,28 +131,11 @@ const NewsDetails = () => {
 
   
 
-    // const handleEditnewsDetails2 = (item) => {
-    //     setCurrentEditnewsDetails2(item);
-    //     setModalOpennewsDetails2(true);
-    // };
     const handleEditnewsDetails2 = (item) => {
-        // Set the current item being edited to the state
         setCurrentEditnewsDetails2(item);
-    
-        // Set the modal to open for editing
         setModalOpennewsDetails2(true);
-    
-        // Set the title and main description based on the item being edited
-        setTitle(item.title);
-        setMainDescription(item.description);
-    
-        // For the main image, we assume it has a URL in item.mainImageUrl
-        setMainImage(item.mainImageUrl);
-    
-        // For additional images and descriptions, we assume they are arrays
-        setAdditionalImages(item.additionalImagesUrls || []);  // Set additional images URLs
-        setAdditionalDescriptions(item.additionalDescriptions || []);  // Set additional image descriptions
     };
+   
     
 
    
@@ -162,7 +149,9 @@ const NewsDetails = () => {
             } catch (error) {
                 console.error('Error deleting newsDetails2 item:', error);
             }
-        }    
+        }  
+        alert("Item sucessfully deleted!");
+  
     };
 
     const handleSubmitnewsDetails2 = async (newData) => {
@@ -198,6 +187,8 @@ const NewsDetails = () => {
             console.error('Error submitting event item:', error);
         }
         setModalOpennewsDetails2(false);
+        alert("Item sucessfully added!");
+
     };
 
 
@@ -206,9 +197,9 @@ const NewsDetails = () => {
     
 
     return (
-        <div className="newsDetails-page">
+        <div className="home-page">
             <h1>News Details</h1>
-            <h2>Latest news </h2>
+            <h2>Latest News </h2>
             <button className="add-button" onClick={handleAddNewsDetails}>Add New Item</button>
             
             <table>
@@ -253,7 +244,7 @@ const NewsDetails = () => {
 </tbody>
 </table>
 
-<h2>Upcoming events </h2>
+<h2>Upcoming Events </h2>
             <button className="add-button" onClick={handleAddnewsDetails2}>Add New Item</button>
             
             <table>

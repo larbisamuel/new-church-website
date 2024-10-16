@@ -8,9 +8,6 @@ html {
 
 }
   
-  /* *, *:before, *:after {
-    box-sizing: inherit;
-  } */
 
 .container {
    
@@ -20,6 +17,17 @@ html {
     margin-top: 20px;
   }
 
+  .ministries{
+    border-left: 2px solid black;
+    padding-left: 10px;
+    margin-left: 15px;
+    margin-top: 20px;
+  }
+
+  .ministries h2{
+    margin-top: 30px;
+    color: #a49e9e;
+  }
 
   nav a {
     text-decoration: none;
@@ -29,29 +37,13 @@ html {
     padding: 10px;
 }
 
-  /* nav a {
-    text-decoration: none;
-    font-size: 17px;
-    margin: 0 65px;
-    color: white;
-    padding: 10px;
-    
-} */
 
 nav a:hover {
     text-decoration: underline;
     color: black;
 }
 
-/* nav {
-    background-color: #2E81DF;
-    padding:10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    border-radius: 10px;
-    margin-top: 20px;
-} */
+
 
 nav {
   background-color: #2E81DF;
@@ -63,12 +55,7 @@ nav {
   margin-top: 20px;
 }
 
-/* .search-container {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-} */
+
 
 .search-container {
   display: flex;

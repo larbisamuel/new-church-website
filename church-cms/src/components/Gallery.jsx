@@ -47,7 +47,10 @@ const Gallery = () => {
             } catch (error) {
                 console.error('Error deleting gallery item:', error);
             }
-        }    };
+        }  
+        alert("Item sucessfully deleted!");
+
+    };
 
     const handleSubmitGallery = async (newData) => {
             const formData = new FormData();
@@ -69,11 +72,13 @@ const Gallery = () => {
                 console.error('Error submitting news item:', error);
             }
             setModalOpenGallery(false);
+            alert("Image sucessfully added!");
+
         };
     
 
     return (
-        <div className="gallery-page">
+        <div className="home-page">
             <h1>Gallery</h1>
             <button className="add-button" onClick={handleAddGallery}>Add New Image</button>
             <table>

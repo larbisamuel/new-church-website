@@ -1,7 +1,9 @@
-/* src/components/Navbar.css */
 .navbar {
-    /* background-color: #333; */
     padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 100px;
+    border-bottom: 1px solid #ccc;
+    border-radius: 20px;
 }
 
 .navbar-list {
@@ -11,24 +13,25 @@
 }
 
 .navbar-list li a {
-    /* color: white; */
     text-decoration: none;
-    padding: 10px 20px;
-    border: none;
-    outline: none;
-    padding: 12px 16px;
+    padding: 12px 10px;
     background-color: white;
     cursor: pointer;
-    font-size: 13px;
+    font-size: 17px;
+    color: black;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.navbar-list li a:hover{
-    background-color: #ddd;
+.navbar-list li a:hover {
+    background-color: #ddd; 
+    border-radius: 5px;
 
 }
-.navbar-list li a:active{
-    background-color: #666;
-    color: white;
+
+.navbar-list li a.active {
+    background-color: #666; 
+    color: white; 
+    border-radius: 5px;
 }
 
 .page {
@@ -41,12 +44,21 @@ table {
     margin: 20px 0;
 }
 
-table, th, td {
+table, th {
     border: 1px solid #ddd;
     padding: 12px;
     text-align: left;
     border-radius: 4px;
 }
+
+td{
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    border-radius: 4px;
+    text-align: justify;
+}
+
 
 th {
     background-color: #f4f4f4;
@@ -62,7 +74,7 @@ td img {
 .add-button {
     padding: 10px 20px;
     margin-bottom: 10px;
-    background-color: #4CAF50;
+    background-color: #0684ae;
     color: white;
     border: none;
     border-radius: 8px;
@@ -71,11 +83,12 @@ td img {
 }
 
 .add-button:hover {
-    background-color: #45a049;
+    background-color: #008CBA;
 }
 
 button {
-    padding: 5px 10px;
+   
+    padding: 5px 10px 5px;
     margin: 0 5px;
     background-color: #008CBA;
     color: white;
@@ -119,30 +132,21 @@ button:focus {
     margin-top: 5px;
 }
 
-.tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: #555;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -60px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  .tooltiptext::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #555 transparent transparent transparent;
-  }
+
     
+  .home-page{
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-top: 20px;
+  }
+
+  .home-page h1{
+    border-left: 1px solid black;
+    padding-left: 3px;
+  }
+
+  .home-page h2{
+    text-align: center;
+    margin-top: 50px;
+  }

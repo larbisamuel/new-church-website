@@ -146,6 +146,8 @@ const Home = () => {
                 console.error('Error deleting event:', error);
             }
         }
+        alert("Image sucessfully deleted!");
+
     };
 
     const handleSubmitBirthday = async (newData) => {
@@ -168,6 +170,7 @@ const Home = () => {
             console.error('Error submitting birthday:', error);
         }
         setModalOpenBirthday(false);
+        alert("Image sucessfully uploaded!");
     };
 
        // Handlers for weddings
@@ -191,6 +194,8 @@ const Home = () => {
                 console.error('Error deleting event:', error);
             }
         }
+        alert("Image sucessfully deleted!");
+
     };
 
     const handleSubmitWeddings = async (newData) => {
@@ -215,6 +220,8 @@ const Home = () => {
             console.error('Error submitting birthday:', error);
         }
         setModalOpenWeddings(false);
+        alert("Image sucessfully uploaded!");
+
     };
 
         // Handlers for next week service
@@ -238,6 +245,8 @@ const Home = () => {
                     console.error('Error deleting news item:', error);
                 }
             }
+            alert("Item sucessfully deleted!");
+
         };
     
     
@@ -270,6 +279,8 @@ const Home = () => {
                 console.error('Error submitting service item:', error);
             }
             setModalOpenNextWeekService(false);
+            alert("Item sucessfully added!");
+
         };
         
 
@@ -294,6 +305,8 @@ const Home = () => {
                 console.error('Error deleting news item:', error);
             }
         }
+        alert("Item sucessfully deleted!");
+
     };
 
     const handleSubmitChurchActivity = async (newData) => {
@@ -320,6 +333,8 @@ const Home = () => {
             console.error('Error submitting service item:', error);
         }
         setModalOpenChurchActivity(false);
+        alert("Activity sucessfully added!");
+
     };
 
 
@@ -344,6 +359,8 @@ const Home = () => {
                 console.error('Error deleting news item:', error);
             }
         }
+        alert("Activity sucessfully deleted!");
+
     };
 
     const handleSubmitMonthlyActivity = async (newData) => {
@@ -370,6 +387,8 @@ const Home = () => {
             console.error('Error submitting service item:', error);
         }
         setModalOpenMonthlyActivity(false);
+        alert("Activity sucessfully added!");
+
     };
 
 
