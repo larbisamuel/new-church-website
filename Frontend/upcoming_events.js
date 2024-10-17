@@ -8,6 +8,17 @@ fetch('http://localhost:3000/api/upcoming-events/top3-u')
     .then(data => {
         const upcomingEventsContainer = document.getElementById('upcoming-events-container');
 
+        upcomingEventsContainer.innerHTML = '' ;
+
+        if (data.length === 0) {
+            // If there are no birthdays, display a message
+            const noDataMessage = document.createElement('div');
+            noDataMessage.classList.add('no-data-message');
+            noDataMessage.innerText = 'No data available'; 
+
+            // Append the no data message to the container
+            upcomingEventsContainer.appendChild(noDataMessage);
+        } else {
         data.forEach(events => {
             // Create a div element to hold each event item
             const eventsItem = document.createElement('div');
@@ -29,6 +40,8 @@ fetch('http://localhost:3000/api/upcoming-events/top3-u')
             // Append the events item to the container
             upcomingEventsContainer.appendChild(eventsItem);
         });
+
+      }
     })
     .catch(error => {
         console.error('Error fetching upcoming events:', error);
