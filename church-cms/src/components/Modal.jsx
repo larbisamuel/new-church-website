@@ -14,12 +14,21 @@ const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
     const [imageFile, setImageFile] = useState(null); // To store the actual file
     const [imagePreview, setImagePreview] = useState(''); // Base64 for preview
 
+    const getFullImageUrl = (imageUrl) => {
+        return imageUrl ? `http://localhost:3000${imageUrl}` : '';
+    };
+
     // Use useEffect to update the form fields when currentData changes
     useEffect(() => {
         if (currentData) {
             setTitleInput(currentData.title || '');
             setDescriptionInput(currentData.description || '');
-            setImagePreview(currentData.image || '');
+            // setImagePreview(currentData.image_url || '');
+            if (currentData.image_url) {
+                setImagePreview(getFullImageUrl(currentData.image_url));  // Use the helper to get full path
+            } else {
+                setImagePreview('');  // Reset preview if no image
+            }
         }
     }, [currentData]);
     
@@ -46,7 +55,7 @@ const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
         // }
     
         // Submit the form data to the parent component
-        onSubmit({ title: titleInput, description: descriptionInput, image: imageFile });
+        onSubmit({ title: titleInput, description: descriptionInput, image: imageFile, image_url: currentData?.image_url});
     
         // Reset form and close modal after submission
         setTitleInput('');

@@ -154,7 +154,13 @@ const Home = () => {
         const formData = new FormData();
         formData.append('title', newData.title);
         formData.append('description', newData.description);
-        if (newData.image) formData.append('image', newData.image);
+        // if (newData.image) formData.append('image', newData.image);
+        if (newData.image) {
+            formData.append('image', newData.image);
+        } else if (currentEditBirthday && currentEditBirthday.image_url) {
+            // Preserve the existing image URL if no new image is uploaded
+            formData.append('image_url', currentEditBirthday.image_url);
+        }
 
         try {
             if (currentEditBirthday) {
@@ -204,8 +210,14 @@ const Home = () => {
         const formData = new FormData();
         formData.append('title', newData.title);
         formData.append('description', newData.description);
-        if (newData.image) formData.append('image', newData.image);
+        // if (newData.image) formData.append('image', newData.image);
 
+        if (newData.image) {
+            formData.append('image', newData.image);
+        } else if (currentEditWeddings && currentEditWeddings.image_url) {
+            formData.append('image_url', currentEditWeddings.image_url);
+        }
+        
         try {
             if (currentEditWeddings) {
                 // Update wedding

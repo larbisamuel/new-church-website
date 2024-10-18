@@ -109,9 +109,9 @@ const NewsDetails = () => {
                 const response = await Axios.post('http://localhost:3000/api/news/upload-news', formData);
                 setNewsDetails([...newsDetails, response.data]);
             }
-    
-           
             
+            
+           
         } catch (error) {
             console.error('Error submitting news item:', error);
         }
