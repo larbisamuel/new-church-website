@@ -546,7 +546,8 @@ section h5 {
     margin-top: 20px;
     margin-bottom: 2px;
     border-top: none;
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: bold;
 }
 
 .theme h4{
@@ -555,6 +556,17 @@ section h5 {
     font-weight: 80;
     padding-bottom: 0px;
 }
+
+.theme h5{
+    margin-top: 20px;
+    margin-bottom: 2px;
+    border-top: none;
+    font-size: 27px;
+    color: black;
+    padding-left: 2px;
+    font-weight: 400;
+}
+
 
 
 .church-activities {
@@ -683,6 +695,13 @@ footer {
         text-align: center; 
     }
     
+    .theme h2{
+        font-size: 27px;
+    }
+
+    .theme h5{
+        font-size: 25px;
+    }
     .scroll img {
         width: 50%;
         height: 520px; 
@@ -756,6 +775,13 @@ footer {
 
     .card-text {
         font-size: 1.1rem;
+    }
+
+    .theme h2{
+        font-size: 23px;
+    }
+    .theme h5{
+        font-size: 22px;
     }
 }
 
@@ -835,6 +861,9 @@ footer {
         width: 100%;
         margin-top: 10px;
     }
+    .theme h2{
+        font-size: 25px;
+    }
 
     .latest-flex1-grid1,
     .card-content {
@@ -871,6 +900,7 @@ footer {
         margin-top: 10px;
         font-size: 10px;
     }
+    
 }
 
 @media (max-width: 390px) {
@@ -937,6 +967,10 @@ footer {
 
     .theme h4{
         font-size: 16px;
+    }
+
+    .theme h5{   
+        font-size: 15px;
     }
 
     .church-activities h1{
@@ -1023,6 +1057,7 @@ footer {
         font-size: 17px;
     
       }
+    
 }
 
 
@@ -1084,6 +1119,12 @@ footer {
         margin-bottom: 2px;
     }
 
+    .theme h3{
+    margin-top: 20px;
+    margin-bottom: 2px;
+    border-top: none;
+    font-size: 27px;
+}
     .theme p {
         font-size: 15px;
         font-family: "poppins";

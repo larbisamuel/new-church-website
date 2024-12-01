@@ -16,11 +16,11 @@ router.get('/', async (req, res) => {
 // Add new next_week_service
 router.post('/', async (req, res) => {
     console.log(req.body);
-    const { occasion_title, theme_title, preacher_title, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns } = req.body;
+    const { occasion_title, theme_title, preacher_title, preacher_title2, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns } = req.body;
     try {
         const result = await pool.query(
-            'INSERT INTO next_week_service (occasion_title, theme_title, preacher_title, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
-            [occasion_title, theme_title, preacher_title, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns]
+            'INSERT INTO next_week_service (occasion_title, theme_title, preacher_title, preacher_title2, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
+            [occasion_title, theme_title, preacher_title, preacher_title2, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns]
         );
         res.json(result.rows[0]);
     } catch (err) {
@@ -32,11 +32,11 @@ router.post('/', async (req, res) => {
 // Update an next_week_service
 router.put('/:id', async (req, res) => {
     const { id } = req.params;
-    const { occasion_title, theme_title, preacher_title, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns } = req.body;
+    const { occasion_title, theme_title, preacher_title, preacher_title2, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns } = req.body;
     try {
         const result = await pool.query(
-            'UPDATE next_week_service SET occasion_title = $1, theme_title= $2, preacher_title = $3, bible_reading_1 = $4, bible_reading_2 = $5, bible_reading_3 = $6, suggested_hymns = $7 WHERE id = $8 RETURNING *',
-            [occasion_title, theme_title, preacher_title, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns, id]
+            'UPDATE next_week_service SET occasion_title = $1, theme_title= $2, preacher_title = $3, bible_reading_1 = $4, bible_reading_2 = $5, bible_reading_3 = $6, suggested_hymns = $7, preacher_title2 = $8 WHERE id = $9 RETURNING *',
+            [occasion_title, theme_title, preacher_title, preacher_title2, bible_reading_1, bible_reading_2, bible_reading_3, suggested_hymns, id]
         );
         res.json(result.rows[0]);
     } catch (err) {

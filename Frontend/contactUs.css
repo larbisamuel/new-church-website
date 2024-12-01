@@ -78,13 +78,16 @@ nav a:hover {
     border: 1px solid #ddd;
     border-radius: 20px;
     border-bottom-width: 13px;
-    height: 650px;
+    height: 750px;
   }
 
  
 
-  .column2 p2{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  .feedback p{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 0;
   }
 
   .message-title {
@@ -145,8 +148,8 @@ nav a:hover {
   }
 
   .Qr-code-img{
-    height: 100px;
-    width: 100px;
+    height: 140px;
+    width: 140px;
   }
 
   .in-touch{
@@ -159,8 +162,8 @@ nav a:hover {
   }
 
   .contact {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    /* display: grid; */
+    /* grid-template-columns: 1fr 1fr; */
     gap: 10px; 
     padding: 20px;
     border: 1px solid #ccc;
@@ -199,6 +202,8 @@ nav a:hover {
 .contact p{
     margin-top: 5px;
     padding: 10px;
+    font-size: 20px;
+    color: #555252;
 }
 
 .services P{
@@ -402,17 +407,17 @@ nav a {
       width: 310px;
   }
 
-  .contact {
+  /* .contact {
     display: grid;
     grid-template-columns: 1fr ;
     gap: 1px; 
     
     border: 1px solid #ccc;
   
-  }
+  } */
 
   .contact p{
-    font-size: 13px;
+    font-size: 18px;
   }
  
 

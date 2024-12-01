@@ -53,6 +53,12 @@ nav a:hover {
 
 }
 
+.message_news h2{
+  font-family: cursive;
+  font-size: 30px;
+  font-weight: 100;
+}
+
 .container {
    
     padding: 50px;
@@ -271,6 +277,11 @@ nav a:hover {
     margin-bottom: 10px;
 }
 
+.message_news h2{
+  font-family: cursive;
+  font-size: 25px;
+  font-weight:bolder;
+}
 
   .search-container {
     margin-top: 10px; 
@@ -408,6 +419,12 @@ nav a:hover {
   nav a {
       margin: 5px 0;
       font-size: 20px;
+  }
+
+  .message_news h2{
+    font-family: cursive;
+    font-size: 25px;
+    font-weight: 200;
   }
 
 
@@ -558,6 +575,7 @@ nav {
   border-radius: 10px;
   margin-top: 20px;
 }
+
 
 nav a {
   margin: 5px 0;

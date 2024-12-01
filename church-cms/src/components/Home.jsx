@@ -3,8 +3,6 @@ import Modal from '../components/Modal';
 import Modal2 from './Modal2';
 import Modal3 from './Modal3';
 import Modal4 from './Modal4';
-
-
 import Axios from 'axios';
 import './allPages.css';
 
@@ -19,7 +17,7 @@ const Home = () => {
     const [modalOpenBirthday, setModalOpenBirthday] = useState(false);
     const [currentEditBirthday, setCurrentEditBirthday] = useState(null);
 
-    //State for birthdays
+    //State for weddings
     const [weddings, setWeddings] = useState([]);
     const [loadingWeddings, setLoadingWeddings] = useState(true);
     const [errorWeddings, setErrorWeddings] = useState(null);
@@ -269,6 +267,7 @@ const Home = () => {
                 occasion_title: newData.occasion_title,
                 theme_title: newData.theme_title,
                 preacher_title: newData.preacher_title,
+                preacher_title2: newData.preacher_title2,
                 bible_reading_1: newData.bible_reading_1,
                 bible_reading_2: newData.bible_reading_2,
                 bible_reading_3: newData.bible_reading_3,
@@ -468,7 +467,8 @@ const Home = () => {
                     <tr>
                         <th>Occasion</th>
                         <th>Theme</th>
-                        <th>Preacher</th>
+                        <th>1st service Preacher</th>
+                        <th>2nd service Preacher</th>
                         <th>1st Bible Reading</th>
                         <th>2nd Bible Reading</th>
                         <th>3rd Bible Reading</th>
@@ -482,6 +482,7 @@ const Home = () => {
                             <td>{item.occasion_title}</td>
                             <td>{item.theme_title}</td>
                             <td>{item.preacher_title}</td>
+                            <td>{item.preacher_title2}</td>
                             <td>{item.bible_reading_1}</td>
                             <td>{item.bible_reading_2}</td>
                             <td>{item.bible_reading_3}</td>

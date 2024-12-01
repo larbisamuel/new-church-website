@@ -6,6 +6,7 @@ const Modal2 = ({ show, onClose, onSubmit, title, currentData }) => {
         occasion_title: currentData?.occasion_title || '',
         theme_title: currentData?.theme_title || '',
         preacher_title: currentData?.preacher_title || '',
+        preacher_title2: currentData?.preacher_title2 || '',
         bible_reading_1: currentData?.bible_reading_1 || '',
         bible_reading_2: currentData?.bible_reading_2 || '',
         bible_reading_3: currentData?.bible_reading_3 || '',
@@ -39,8 +40,11 @@ const Modal2 = ({ show, onClose, onSubmit, title, currentData }) => {
                 <label>Theme Title:</label>
                 <input name="theme_title" value={formData.theme_title} onChange={handleChange} className="modal-input" />
                 
-                <label>Preacher Title:</label>
+                <label>Preacher (1st service):</label>
                 <input name="preacher_title" value={formData.preacher_title} onChange={handleChange} className="modal-input" />
+                
+                <label>Preacher (2nd service):</label>
+                <input name="preacher_title2" value={formData.preacher_title2} onChange={handleChange} className="modal-input" />
                 
                 <label> Bible Reading (1st):</label>
                 <input name="bible_reading_1" value={formData.bible_reading_1} onChange={handleChange} className="modal-input" />

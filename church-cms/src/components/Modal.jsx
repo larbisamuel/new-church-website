@@ -3,12 +3,6 @@ import './modal.css';
 import Axios from 'axios';  
 
 const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
-    // const [titleInput, setTitleInput] = useState(currentData ? currentData.title : '');
-    // const [descriptionInput, setDescriptionInput] = useState(currentData ? currentData.description : '');
-    // const [imageFile, setImageFile] = useState(null); // To store the actual file
-    // const [imagePreview, setImagePreview] = useState(currentData ? currentData.image : ''); // Base64 for preview
-
-
     const [titleInput, setTitleInput] = useState('');
     const [descriptionInput, setDescriptionInput] = useState('');
     const [imageFile, setImageFile] = useState(null); // To store the actual file
@@ -47,12 +41,7 @@ const Modal = ({ show, onClose, onSubmit, title, currentData }) => {
     const handleSubmit =  (e) => {
         e.preventDefault();  // Prevent the default form submission
     
-        // const formData = new FormData();
-        // formData.append('title', titleInput);
-        // formData.append('description', descriptionInput);
-        // if (imageFile) {
-        //     formData.append('image', imageFile);  // Send the actual file object
-        // }
+       
     
         // Submit the form data to the parent component
         onSubmit({ title: titleInput, description: descriptionInput, image: imageFile, image_url: currentData?.image_url});

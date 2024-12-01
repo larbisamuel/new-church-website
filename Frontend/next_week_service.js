@@ -14,8 +14,9 @@ fetch('http://localhost:3000/api/next-week-service')
             nwsItem.innerHTML = `
             
                 <h2>Occasion: ${nws.occasion_title}</h2>
-                <h2>Theme: ${nws.theme_title}</h2>
-                <h4>Preacher: ${nws.preacher_title}</h4>
+                <h5>Theme: ${nws.theme_title}</h5>
+                <h4>1st Service Preacher: ${nws.preacher_title}</h4>
+                <h4>2nd Service Preacher: ${nws.preacher_title2}</h4>
                 <p><strong>1st Bible Reading:</strong> ${nws.bible_reading_1}</p>
                 <p><strong>2nd Bible Reading:</strong> ${nws.bible_reading_2}</p>
                 <p><strong>3rd Bible Reading:</strong> ${nws.bible_reading_3}</p>

@@ -64,7 +64,7 @@ nav {
     color: black;
     text-align: center;
     margin-top: 10px;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: 90;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
@@ -302,6 +302,7 @@ nav {
 
 
 
+
 footer {
     text-align: center;
     margin-top: 50px;
@@ -317,6 +318,9 @@ footer {
     width: 100%;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.welcome{
+  font-size: 20px;
 }
   .row{
     display: flex;
@@ -361,6 +365,9 @@ footer {
     margin-top: 10px; 
     width: 100%;
 }
+.welcome{
+  font-size: 20px;
+}
 
   .search-input {
     width: 100%;
@@ -397,7 +404,7 @@ footer {
   }
 
   .welcome{
-    font-size: 25px;
+    font-size: 20px;
   }
 
   .content{

@@ -30,7 +30,8 @@ CREATE TABLE next_week_service (
     id SERIAL PRIMARY KEY,
     occasion_title VARCHAR(255),
     theme_title VARCHAR(255),
-    preacher_title VARCHAR(255),
+    preacher_title VARCHAR(255), 
+    preacher_title2 VARCHAR(255),
     bible_reading_1 VARCHAR(255),
     bible_reading_2 VARCHAR(255),
     bible_reading_3 VARCHAR(255),
@@ -110,7 +111,7 @@ CREATE TABLE gallery (
 
 CREATE TABLE users (
     ID SERIAL PRIMARY KEY,
-    staff_id VARCHAR NOT NULL,
+    staff_id TEXT NOT NULL,
     password TEXT NOT NULL,
     email VARCHAR(255)
 );

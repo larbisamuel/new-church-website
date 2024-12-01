@@ -107,6 +107,8 @@ router.put('/:id', upload, async (req, res) => {
             return res.status(400).send('No images uploaded');
         }
 
+        
+
         // Handle saving the main image
         const mainImage = images['image'][0];
         const mainImageUrl = `/uploads/${mainImage.filename}`;

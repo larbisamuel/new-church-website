@@ -11,7 +11,6 @@ const NewsDetails = () => {
     const [errorNewsDetails, setErrorNewsDetails] = useState(null);
     const [modalOpenNewsDetails, setModalOpenNewsDetails] = useState(false);
     const [currentEditNewsDetails, setCurrentEditNewsDetails] = useState(null);
-    // const [defaultTitle, setDefaultTitle] = useState(''); // New state to hold the default title
 
     
     const [newsDetails2, setnewsDetails2] = useState([]);
@@ -19,7 +18,6 @@ const NewsDetails = () => {
     const [errornewsDetails2, setErrornewsDetails2] = useState(null);
     const [modalOpennewsDetails2, setModalOpennewsDetails2] = useState(false);
     const [currentEditnewsDetails2, setCurrentEditnewsDetails2] = useState(null);
-    // const [defaultTitle2, setdefaultTitle2] = useState('');
 
 
      // Fetch newsDetails
@@ -27,7 +25,6 @@ const NewsDetails = () => {
         const fetchNewsDetails = async () => {
             try {
                 const response = await Axios.get('http://localhost:3000/api/news');
-                console.log("response data",response.data); 
                 setNewsDetails(response.data);
                 setLoadingNewsDetails(false);
             } catch (error) {
@@ -43,7 +40,6 @@ const NewsDetails = () => {
         const fetchnewsDetails2 = async () => {
             try {
                 const response = await Axios.get('http://localhost:3000/api/upcoming-events');
-                console.log("response data",response.data); 
                 setnewsDetails2(response.data);
                 setLoadingnewsDetails2(false);
             } catch (error) {
@@ -107,7 +103,9 @@ const NewsDetails = () => {
             } else {
                 // Create new news item
                 const response = await Axios.post('http://localhost:3000/api/news/upload-news', formData);
-                setNewsDetails([...newsDetails, response.data]);
+                const updatedList = await Axios.get('http://localhost:3000/api/news');
+                setNewsDetails(updatedList.data); 
+                
             }
             
             
@@ -154,13 +152,14 @@ const NewsDetails = () => {
   
     };
 
+
+
     const handleSubmitnewsDetails2 = async (newData) => {
         const formData = new FormData();
         formData.append('title', newData.title);
         formData.append('description', newData.description);
         if (newData.image) formData.append('image', newData.image);
     
-        // Append additional images and descriptions
         newData.additionalImages.forEach((image, index) => {
             formData.append('additionalImages', image);
             formData.append('additionalDescriptions[]', newData.additionalDescriptions[index]);
@@ -168,27 +167,20 @@ const NewsDetails = () => {
     
         try {
             if (currentEditnewsDetails2) {
-                // Update news details
                 const response = await Axios.put(`http://localhost:3000/api/upcoming-events/${currentEditnewsDetails2.id}`, formData);
                 setnewsDetails2(newsDetails2.map(item => item.id === currentEditnewsDetails2.id ? response.data : item));
             } else {
-                // Create new news item
-                const uploadResponse = await Axios.post('http://localhost:3000/api/upcoming-events/upload-u-news', formData);
-                setnewsDetails2([...newsDetails2, uploadResponse.data]);
-                console.log("event additional img:", uploadResponse);
+                await Axios.post('http://localhost:3000/api/upcoming-events/upload-u-news', formData);
+                // Fetch updated list
+                const updatedList = await Axios.get('http://localhost:3000/api/upcoming-events');
+                setnewsDetails2(updatedList.data); 
             }
-            
-    
-            // Refetch the updated list of news after successful submission
-            // const updatedResponse = await Axios.get(`http://localhost:3000/api/upcoming-events/${id}`);
-            // setnewsDetails2(updatedResponse.data);
-            
         } catch (error) {
             console.error('Error submitting event item:', error);
         }
+    
         setModalOpennewsDetails2(false);
-        alert("Item sucessfully added!");
-
+        alert("Item successfully added!");
     };
 
 
@@ -296,7 +288,6 @@ const NewsDetails = () => {
                 onSubmit={handleSubmitNewsDetails}
                 title={currentEditNewsDetails ? "Edit Item" : "Add New Item"}
                 currentData={currentEditNewsDetails}
-                // defaultTitle={defaultTitle}
             />
 
             <Modal_News
@@ -305,7 +296,6 @@ const NewsDetails = () => {
                 onSubmit={handleSubmitnewsDetails2}
                 title={currentEditnewsDetails2 ? "Edit Item" : "Add New Item"}
                 currentData={currentEditnewsDetails2}
-                // defaultTitle={defaultTitle2}
             />
             
 
