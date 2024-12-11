@@ -109,6 +109,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .question h3{
@@ -124,11 +125,25 @@ nav {
 .back-to-top p{
   font-size: 15px;
 }
+.interest-grp a{
+  color: white;
+  background-color: #2E81DF;
+  margin-bottom: 10px;
+}
 
+.generational-grp a{
+  color: white;
+  background-color: #2E81DF;
+  margin-bottom: 10px;
+}
 .answer{
   max-height: 0;
   overflow: scroll;
   transition: max-height 1.0s ease;
+  background-color: rgb(28, 25, 25);
+  color: white;
+  border-radius: 10px;
+  padding-left: 10px;
 }
 
 .answer p{
