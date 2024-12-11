@@ -87,8 +87,14 @@ const NewsDetails = () => {
         formData.append('title', newData.title);
         formData.append('description', newData.description);
         
-        if (newData.image) formData.append('image', newData.image);
-    
+        // if (newData.image) formData.append('image', newData.image);
+        if (newData.image) {
+            formData.append('image', newData.image);
+            }else if  (currentEditNewsDetails && currentEditNewsDetails.image_url) {
+                // Preserve the existing image URL if no new image is uploaded
+                formData.append('image_url', currentEditNewsDetails.image_url);
+            }
+
         // Append additional images and descriptions
         newData.additionalImages.forEach((image, index) => {
             formData.append('additionalImages', image);

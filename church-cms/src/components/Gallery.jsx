@@ -56,8 +56,13 @@ const Gallery = () => {
             const formData = new FormData();
             formData.append('title', newData.title);
             formData.append('description', newData.description);
-            if (newData.image) formData.append('image', newData.image);
-    
+            if (newData.image) {
+            formData.append('image', newData.image);
+            }else if  (currentEditGallery && currentEditGallery.image_url) {
+                // Preserve the existing image URL if no new image is uploaded
+                formData.append('image_url', currentEditGallery.image_url);
+            }
+
             try {
                 if (currentEditGallery) {
                     // Update gallery

@@ -31,7 +31,6 @@ router.post('/', upload.single('image'), async (req, res) => {
     const { title, description } = req.body;
     const imageUrl = req.file ? `/uploads/${req.file.filename}` : null;
 
-    console.log('Received data:', { title, description, imageUrl });
 
     try {
         const result = await pool.query(

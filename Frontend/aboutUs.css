@@ -25,17 +25,7 @@ nav {
   font-size: 20px;
 
 }
-.search-container {
-  display: flex;
-  align-items: center;
-}
 
-.search-input {
-    border-radius: 7px;
-    padding: 4px;
-    border: none;
-
-}
 
 .nav-links a:hover {
     text-decoration: underline;
@@ -191,7 +181,6 @@ nav {
 .back-to-top{
   float: right;
   padding-right: 10px;
-  /* margin-top: 20px; */
 }
 
 .back-to-top p{
@@ -202,7 +191,6 @@ nav {
 
 
 .profile-container{
-    /* position: relative; */
     margin: 40px ;
     padding: 10px 65px 0px 65px;
     color: white;
@@ -347,7 +335,6 @@ footer {
 
 
 .profile-container{
-  /* position: relative; */
   margin: 40px 10px 0px 10px ;
   padding: 10px 65px 0px 65px;
   color: white;
